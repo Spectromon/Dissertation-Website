@@ -1,9 +1,3 @@
-//setTimeout() # Call a function after a delay
-//clearTimeout() #Stop above
-// setInterval() #Call a function repeatedly after a delay
-// clearInterval() #Stop above
-
-const port = process.env.PORT || 3000
 const http = require('http');
 const port = process.env.PORT || 3000
 
