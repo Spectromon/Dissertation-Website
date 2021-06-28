@@ -177,6 +177,7 @@ function colourSelector(idx1, idx2){
 
 // Function which allows movement of the tiles, documented in the notepad
 function changeColour(square){
+    if (winner === false){
     index = tilelist.indexOf(square.id)
     blank = document.getElementsByClassName('blank')[1]
     index2 = tilelist.indexOf(blank.id)
@@ -215,11 +216,12 @@ function changeColour(square){
     }
 
     colourChecker()
-    if (winner === false && square.className != blank.className){
+    if (square.className != blank.className){
         totalmoves += 1
     }
     gameChecker()
     document.getElementById("moves").innerHTML = "Moves: " + totalmoves;
+    }
 
 }
 
