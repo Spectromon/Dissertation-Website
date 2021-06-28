@@ -9,7 +9,7 @@ app.use(express.static(__dirname));
   
 // Getting Request
 app.get('/', (req, res) => {
-    res.sendFile('signup.html', {root: __dirname })
+    res.sendFile('rubick.html', {root: __dirname })
 });
   
 // Establishing the port 
