@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="script.js" charset="utf-8"></script>
+    <script src="p.js" charset="utf-8"></script>
+    <title>Rubick's Race Game</title>
+</head>
+<body>
+    <header class = 'header'>
+        <div class = 'topbar'>
+            <div class = 'navbar'></div>
+                <div class = 'logobox'>
+                    <a href = "file:///Z:/Documents/University%20Work%20(Comp%20Sci)/Dissertation/Website/index.html">
+                    <img class = 'logo' src="brain.png" alt="brain image">
+                    </a>
+                </div>
+                <div class = 'linkbox'>
+                    <a href="/" class = 'loginlnk'>Log In</a>
+                    <a href = "/" class = 'signuplnk'>Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class = gamezone>
+        <div class = internalgamezone>
+            <div class = containerofcontainers>
+                <div class = outsidecontainer_main>
+                    <div class = container>
+                        <div id = 'tile-alt'></div>
+                        <div id = 'tile2-alt' class = 'blue'></div>
+                        <div id = 'tile3-alt' class = 'blue'></div>
+                    </div>
+                    <div class = container>
+                        <div id = 'tile4-alt' class = 'blue'></div>
+                        <div id = 'tile5-alt' class = 'blue'></div>
+                        <div id = 'tile6-alt' class = 'blue'></div>
+                    </div>
+                    <div class = container>
+                        <div id = 'tile7-alt' class = 'blue'></div>
+                        <div id = 'tile8-alt' class = 'blue'></div>
+                        <div id = 'tile9-alt' class = 'blue'></div>
+                    </div>
+                </div>
+    
+                <div class = outsidecontainer_change >
+                    <div class = container oncontextmenu="return false;">
+                        <div id = 'tile' class = 'red' onmousedown="changeColour(this, event)" oncontextmenu = "false"></div>
+                        <div id = 'tile2' class = 'red' onmousedown="changeColour(this, event)"></div>
+                        <div id = 'tile3' class = 'red' onmousedown="changeColour(this, event)"></div>
+                    </div>
+                    <div class = container oncontextmenu="return false;">
+                        <div id = 'tile4' class = 'red' onmousedown="changeColour(this, event)"></div>
+                        <div id = 'tile5' class = 'red' onmousedown="changeColour(this, event)"></div>
+                        <div id = 'tile6' class = 'red' onmousedown="changeColour(this, event)"></div>
+                    </div>
+                    <div class = container oncontextmenu="return false;">
+                        <div id = 'tile7' class = 'red' onmousedown="changeColour(this, event)"></div>
+                        <div id = 'tile8' class = 'red' onmousedown="changeColour(this, event)"></div>
+                        <div id = 'tile9' class = 'red' onmousedown="changeColour(this, event)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = white>
+    <div class = buttoninformation>
+        <div class = buttoninformation2>
+            <div class = buttoninformation3>
+                <button class = 'newgame' onclick = "reset()">New Game</button>
+                <p class = 'moves'id = 'moves'>Moves: </p>
+            </div>
+        </div>
+    </div>
+    <div class = buttoninformation>
+        <div class = buttoninformation2>
+            <div class = buttoninformation3>
+                <p class = 'information'id = 'Winner'> Match each square on the right to the same colour as their counterpart on the left by left or right clicking on them to change their colour!</p>
+            </div>
+        </div>
+    </div>
+    <div class = buttoninformation>
+        <div class = buttoninformation2>
+            <div class = buttoninformation3>
+                <p class = 'colourinfo'>Order of Colours: Red > Green > Blue > Yellow > Orange > Purple > Black > Red</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>
