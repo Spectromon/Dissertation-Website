@@ -40,11 +40,12 @@ app.get('/', (req, res) => {
 app.post('/', urlencodedParser, (req,res) =>{
   console.log(req.body.email) //you will get your data in this as object
   u_name = makeid(5)
+  p_word = makeid(8)
   var mailOptions = {
     from: 'rgu20daudissertation@gmail.com',
     to: req.body.email,
     subject: 'Sending Email using Node.js',
-    text: 'Your username is ' + u_name
+    text: 'Your username is ' + u_name + '.\n Your password is ' + p_word
   };
 
   transporter.sendMail(mailOptions);
