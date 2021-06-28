@@ -5,6 +5,7 @@
 const env = process.env.NODE_ENV || 'development'
 const express = require('express');
 const app = express();
+app.use(express.static(__dirname));
   
 // Getting Request
 app.get('/', (req, res) => {
