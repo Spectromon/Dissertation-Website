@@ -2,16 +2,24 @@
 //clearTimeout() #Stop above
 // setInterval() #Call a function repeatedly after a delay
 // clearInterval() #Stop above
+// Importing express module
 const env = process.env.NODE_ENV || 'development'
-const port = process.env.PORT || 3000
 const express = require('express');
 const app = express();
-app.use(express.static(__dirname + '/public/'));
-
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
-
-app.listen(3000, () => {
-    console.log('Server listening on http://localhost:' + port);
-  });
+  
+// Getting Request
+app.get('/', (req, res) => {
+  
+    // Sending the response
+    res.send('Hello World!')
+     
+    // Ending the response 
+    res.end()
+})
+  
+// Establishing the port 
+const PORT = process.env.PORT ||5000;
+  
+// Executing the sever on given port number
+app.listen(PORT, console.log(
+  `Server started on port ${PORT}`));
