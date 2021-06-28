@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=s, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="script.js" charset="utf-8"></script>
+    <script src="practi.js" charset="utf-8"></script>
     <script src="p.js" charset="utf-8"></script>
     <title>Rubick's Race Game</title>
 </head>
@@ -32,36 +32,36 @@
                 <div class = outsidecontainer_main>
                     <div class = container>
                         <div id = 'tile-alt'></div>
-                        <div id = 'tile2-alt' class = 'blue'></div>
-                        <div id = 'tile3-alt' class = 'blue'></div>
+                        <div id = 'tile4-alt'></div>
+                        <div id = 'tile7-alt'></div>
                     </div>
                     <div class = container>
-                        <div id = 'tile4-alt' class = 'blue'></div>
-                        <div id = 'tile5-alt' class = 'blue'></div>
-                        <div id = 'tile6-alt' class = 'blue'></div>
+                        <div id = 'tile2-alt'></div>
+                        <div id = 'tile5-alt'></div>
+                        <div id = 'tile8-alt'></div>
                     </div>
                     <div class = container>
-                        <div id = 'tile7-alt' class = 'blue'></div>
-                        <div id = 'tile8-alt' class = 'blue'></div>
-                        <div id = 'tile9-alt' class = 'blue'></div>
+                        <div id = 'tile3-alt'></div>
+                        <div id = 'tile6-alt'></div>
+                        <div id = 'tile9-alt'></div>
                     </div>
                 </div>
     
                 <div class = outsidecontainer_change >
                     <div class = container oncontextmenu="return false;">
-                        <div id = 'tile' class = 'red' onmousedown="changeColour(this, event)" oncontextmenu = "false"></div>
-                        <div id = 'tile2' class = 'red' onmousedown="changeColour(this, event)"></div>
-                        <div id = 'tile3' class = 'red' onmousedown="changeColour(this, event)"></div>
+                        <div id = 'tile' onmousedown="changeColour(this)"></div>
+                        <div id = 'tile4' onmousedown="changeColour(this)"></div>
+                        <div id = 'tile7'onmousedown="changeColour(this)"></div>
                     </div>
                     <div class = container oncontextmenu="return false;">
-                        <div id = 'tile4' class = 'red' onmousedown="changeColour(this, event)"></div>
-                        <div id = 'tile5' class = 'red' onmousedown="changeColour(this, event)"></div>
-                        <div id = 'tile6' class = 'red' onmousedown="changeColour(this, event)"></div>
+                        <div id = 'tile2'onmousedown="changeColour(this)"></div>
+                        <div id = 'tile5'onmousedown="changeColour(this)"></div>
+                        <div id = 'tile8'onmousedown="changeColour(this)"></div>
                     </div>
                     <div class = container oncontextmenu="return false;">
-                        <div id = 'tile7' class = 'red' onmousedown="changeColour(this, event)"></div>
-                        <div id = 'tile8' class = 'red' onmousedown="changeColour(this, event)"></div>
-                        <div id = 'tile9' class = 'red' onmousedown="changeColour(this, event)"></div>
+                        <div id = 'tile3'onmousedown="changeColour(this)"></div>
+                        <div id = 'tile6'onmousedown="changeColour(this)"></div>
+                        <div id = 'tile9'onmousedown="changeColour(this)"></div>
                     </div>
                 </div>
             </div>
@@ -82,14 +82,6 @@
                 <p class = 'information'id = 'Winner'> Match each square on the right to the same colour as their counterpart on the left by left or right clicking on them to change their colour!</p>
             </div>
         </div>
-    </div>
-    <div class = buttoninformation>
-        <div class = buttoninformation2>
-            <div class = buttoninformation3>
-                <p class = 'colourinfo'>Order of Colours: Red > Green > Blue > Yellow > Orange > Purple > Black > Red</p>
-            </div>
-        </div>
-    </div>
     </div>
     
 </body>
