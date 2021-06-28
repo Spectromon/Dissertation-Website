@@ -8,7 +8,7 @@ const app = express();
   
 // Getting Request
 app.get('/', (req, res) => {
-    res.sendFile('views/index.html', {root: __dirname })
+    res.sendFile('index.html', {root: __dirname })
 });
   
 // Establishing the port 
