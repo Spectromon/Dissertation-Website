@@ -52,6 +52,13 @@ app.post('/', urlencodedParser, (req,res) =>{
   console.log(req.body.email) //you will get your data in this as object
   u_name = makeid(5)
   p_word = makeid(8)
+  var sql = {text: 'INSERT INTO u_info(u_name, p_word, email) VALUES($1,$2,$3);', values: [u_name, p_word, email]}
+  client.query(sql, (err, res) => {
+    if (err){
+      console.log(err)
+    };
+    client.end();
+  });
   var mailOptions = {
     from: 'rgu20daudissertation@gmail.com',
     to: req.body.email,
