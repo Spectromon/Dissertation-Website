@@ -12,7 +12,6 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const app = express();
 app.use(express.static(__dirname));
 app.use(express.json());
-app.use(express.urlencoded({extended : false}));
 
 const { Client } = require('pg');
 
@@ -65,7 +64,7 @@ app.get('/rubick', (req, res) => {
 
 
 //This works. Requires urlencodedParser however does send an email to the specific inputted email address.
-app.post('/signup', (req,res) =>{
+app.post('/signup', urlencodedParser, (req,res) =>{
   email = req.body.email
   u_name = makeid(5)
   p_word = makeid(8)
@@ -87,7 +86,7 @@ app.post('/signup', (req,res) =>{
   res.redirect('/login')
 })
 
-app.post('/login', async (req,res) =>{
+app.post('/login', urlencodedParser, async (req,res) =>{
   u_name = req.body.username
   p_word = req.body.password
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
