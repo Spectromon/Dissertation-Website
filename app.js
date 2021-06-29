@@ -80,7 +80,7 @@ app.post('/signup', urlencodedParser, (req,res) =>{
   res.redirect('/login')
 })
 
-app.post('/login', jsonParser, (req,res) =>{
+app.post('/login', jsonParser, urlencodedParser, (req,res) =>{
   u_name = req.body.u_name
   p_word = req.body.p_word
   console.log(u_name, p_word);
