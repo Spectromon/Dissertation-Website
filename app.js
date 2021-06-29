@@ -103,30 +103,6 @@ app.post('/login',urlencodedParser, async (req,res) =>{
       }
     }
   res.sendFile('login.html', {root: __dirname })
-                
-                
-  // client.query(sql, checker = (err, res) =>{
-  //   if(err){
-  //     console.log(err)
-  //   }
-  //   else{
-  //     logger = res.rows
-  //     if (logger.length != 0){
-  //       if (logger[0].u_name != undefined && logger[0].p_word != undefined){
-  //         if (logger[0].u_name == u_name && logger[0].p_word == p_word){
-  //           checker = 1
-  //           console.log(checker)
-  //         }
-  //       }
-  //     }
-  //   };
-  // })
-  // if (checker == 1){
-  //   res.sendFile('index.html', {root: __dirname })
-  // }
-  // else{
-  //   res.sendFile('login.html', {root: __dirname })
-  // }
 })
   
 // Establishing the port 
