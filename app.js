@@ -80,17 +80,10 @@ app.post('/signup', urlencodedParser, (req,res) =>{
   res.redirect('/login')
 })
 
-app.post('/login', urlencodedParser, (req,res) =>{
+app.post('/login', jsonParser, (req,res) =>{
   u_name = req.body.u_name
   p_word = req.body.p_word
-  var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
-  client.query(sql, (err, res) => {
-    if (err) throw err;
-    logger = collect(res.rows)
-    console.log(logger.count())
-
-
-  });
+  console.log(u_name, p_word);
   res.sendFile('login.html', {root: __dirname })
 })
   
