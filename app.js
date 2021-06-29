@@ -78,6 +78,30 @@ app.post('/signup', urlencodedParser, (req,res) =>{
 
   res.redirect('/login')
 })
+
+app.post('/login', urlencodedParser, (req,res) =>{
+  u_name = req.body.u_name
+  p_word = req.body.p_word
+  var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
+  client.query(sql, (err, res) => {
+    if (err) throw err;
+    for (let row of res.rows) {
+      console.log(row[0])
+      console.log(row[1])
+    }
+    client.end();
+  });
+  var mailOptions = {
+    from: 'rgu20daudissertation@gmail.com',
+    to: req.body.email,
+    subject: 'Sending Email using Node.js',
+    text: 'Hi there,\n\n Thank you for signing up to be a part of this study. In order to maintain your anonymity, and to limit the opportunity for bias towards results, you have been assigned a random username and password.\n\n For the purposes of this study, please only make one account, as making multiple accounts may sqew results and hinder the study! Please also conduct eyetracking on games with eyetracking included, and complete at least 3 attempts on each game.\n\n Your username is' + u_name + '.\n Your password is ' + p_word  + '.\n\n Again, thank you for participating, and enjoy the games!\n\n Braintroller Team'
+  };
+
+  transporter.sendMail(mailOptions);
+
+  res.redirect('/login')
+})
   
 // Establishing the port 
 const PORT = process.env.PORT ||5000;
