@@ -104,10 +104,13 @@ app.post('/login', urlencodedParser, async (req,res) =>{
         if (login.u_name == u_name && login.p_word == p_word){
           res.redirect('/rubick')
         }
+        else{
+          res.redirect('/signup')
+        }
+      }
       else{
         res.sendFile('login.html', {root: __dirname })
-      }
-      }
+        }
     }
 })
   
