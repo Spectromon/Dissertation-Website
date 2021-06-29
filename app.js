@@ -11,7 +11,6 @@ const nodemailer = require('nodemailer');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const app = express();
 app.use(express.static(__dirname));
-app.use(express.json());
 
 const { Client } = require('pg');
 
@@ -86,7 +85,7 @@ app.post('/signup', urlencodedParser, (req,res) =>{
   res.redirect('/login')
 })
 
-app.post('/login', urlencodedParser, async (req,res) =>{
+app.post('/login',urlencodedParser, async (req,res) =>{
   u_name = req.body.username
   p_word = req.body.password
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
