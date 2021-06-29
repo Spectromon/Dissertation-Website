@@ -71,7 +71,7 @@ app.post('/signup', urlencodedParser, (req,res) =>{
     from: 'rgu20daudissertation@gmail.com',
     to: req.body.email,
     subject: 'Sending Email using Node.js',
-    text: 'Hi there,\n\n Thank you for signing up to be a part of this study. In order to maintain your anonymity, and to limit the opportunity for bias towards results, you have been assigned a random username and password.\n\n For the purposes of this study, please only make one account, as making multiple accounts may sqew results and hinder the study! Please also conduct eyetracking on games with eyetracking included, and complete at least 3 attempts on each game.\n\n Your username is ' + u_name + '.\n Your password is ' + p_word  + '.\n\n Again, thank you for participating, and enjoy the games!\n\n Braintroller Team'
+    text: 'Hi there,\n\n Thank you for signing up to be a part of this study. In order to maintain your anonymity, and to limit the opportunity for bias towards results, you have been assigned a random username and password.\n\n For the purposes of this study, please only make one account, as making multiple accounts may sqew results and hinder the study! Please also conduct eyetracking on games with eyetracking included, and complete at least 3 attempts on each game.\n\n Your username is' + u_name + '.\n Your password is ' + p_word  + '.\n\n Again, thank you for participating, and enjoy the games!\n\n Braintroller Team'
   };
 
   transporter.sendMail(mailOptions);
@@ -85,11 +85,10 @@ app.post('/login', urlencodedParser, (req,res) =>{
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   client.query(sql, (err, res) => {
     if (err) throw err;
-    console.log(count(res.rows)
+    console.log(count(res.rows))
   });
   res.sendFile('login.html', {root: __dirname })
 })
-  
   
 // Establishing the port 
 const PORT = process.env.PORT ||5000;
