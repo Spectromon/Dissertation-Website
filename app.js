@@ -113,9 +113,7 @@ app.post('/login',urlencodedParser, (req,res) =>{
 
 function queryMaker(sql){
   return client.query(sql)
-  })
-
-}
+ }
   
 // Establishing the port 
 const PORT = process.env.PORT ||5000;
