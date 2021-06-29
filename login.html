@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Login</title>
+    <script src="login.js" charset="utf-8"></script>
 </head>
 <body>
-    <form method = 'POST'>
+    <form method = 'POST' onsubmit = "loginUser()">
         <input type="text" class = 'login' id="username" name="username" placeholder = 'Username'>
         <input type="password" class = 'login' id="password" name="pasword" placeholder = 'Password'>
         <input type='submit'/>
