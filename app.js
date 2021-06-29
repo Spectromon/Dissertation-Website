@@ -91,7 +91,8 @@ app.post('/login',urlencodedParser, async (req,res) =>{
   }
   else if (logger != undefined){
       console.log('An entry was found')
-    }             
+    }
+  res.sendFile('login.html', {root: __dirname })
                 
                 
   // client.query(sql, checker = (err, res) =>{
