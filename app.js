@@ -89,7 +89,6 @@ app.post('/login', urlencodedParser, (req,res) =>{
       console.log(row[0])
       console.log(row[1])
     }
-    client.end();
   });
   res.send(row)
 })
