@@ -3,7 +3,7 @@
 // setInterval() #Call a function repeatedly after a delay
 // clearInterval() #Stop above
 const env = process.env.NODE_ENV || 'development'
-const collect = require('collect');
+const collect = require('collect.js');
 const express = require('express');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
@@ -85,7 +85,8 @@ app.post('/loging',jsonParser, (req,res) =>{
   p_word = req.body.Password
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   var logger = client.query(sql)
-  res.send(logger.rows)
+  login = collect(logger.rows)
+  console.log(login.count())
 })
   
 // Establishing the port 
