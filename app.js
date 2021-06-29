@@ -12,7 +12,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const app = express();
 app.use(express.static(__dirname));
 app.use(express.json());
-app.use(express.urlencodedParser({extended : false}));
+app.use(express.urlencoded({extended : false}));
 
 const { Client } = require('pg');
 
