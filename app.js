@@ -102,11 +102,12 @@ app.post('/login',urlencodedParser, (req,res) =>{
       }
     };
   })
+  console.log(checker)
   if (checker == 1){
-    res.sendFile('index.html', {root: __dirname })
+    res.redirect('/index')
   }
   else if (checker == 0){
-    res.sendFile('login.html', {root: __dirname })
+    res.redirect('/login')
   }
 })
   
