@@ -88,7 +88,6 @@ app.post('/signup', urlencodedParser, (req,res) =>{
 app.post('/login',urlencodedParser, async (req,res) =>{
   u_name = req.body.username
   p_word = req.body.password
-  checker = 0
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   var logger = await client.query(sql)
   if (logger == undefined){
