@@ -90,7 +90,6 @@ app.post('/login', urlencodedParser, (req,res) =>{
       console.log(row[1])
     }
   });
-  res.send(row)
 })
   
 // Establishing the port 
