@@ -85,7 +85,7 @@ app.post('/signup', urlencodedParser, (req,res) =>{
   res.redirect('/login')
 })
 
-app.post('/login',urlencodedParser, async (req,res) =>{
+app.post('/login', urlencodedParser, async (req,res) =>{
   console.log("post request made")
   u_name = req.body.username
   p_word = req.body.password
@@ -94,20 +94,21 @@ app.post('/login',urlencodedParser, async (req,res) =>{
   var logger = await client.query(sql)
   if (logger == undefined){
     console.log('No entry of that username or password')
-    pass
+    res.sendFile('login.html', {root: __dirname })
   }
   else if (logger != undefined){
-    console.log ('There is a logger')
+    console.log (logger)
       if (logger.rows.length != 0){
         login = logger.rows[0]
         console.log(login)
         if (login.u_name == u_name && login.p_word == p_word){
           res.redirect('/rubick')
         }
-      else{pass}
+      else{
+        res.sendFile('login.html', {root: __dirname })
+      }
       }
     }
-  res.sendFile('login.html', {root: __dirname })
 })
   
 // Establishing the port 
