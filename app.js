@@ -85,10 +85,11 @@ app.post('/login',jsonParser, (req,res) =>{
   p_word = req.body.Password
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   var logger = client.query(sql)
-  login = collect(JSON.stringify(logger.rows))
-  console.log(login.count())
+  login = JSON.stringify(logger.rows)
+  console.log(login)
   res.send(logger.rows)
 })
+  
   
 // Establishing the port 
 const PORT = process.env.PORT ||5000;
