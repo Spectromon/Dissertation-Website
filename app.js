@@ -80,16 +80,10 @@ app.post('/signup', urlencodedParser, (req,res) =>{
   res.redirect('/login')
 })
 
-app.post('/login',jsonParser, (req,res) =>{
-  u_name = req.body.Username
-  p_word = req.body.Password
-  var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
-  client.query(sql, (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  res.send(logger.rows)
+app.post('/login',urlencodedParser, (req,res) =>{
+  u_name = req.body.username
+  p_word = req.body.password
+  console.log(u_name, p_word)
 })
   
   
