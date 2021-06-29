@@ -91,10 +91,7 @@ app.post('/login',urlencodedParser, (req,res) =>{
     }
     else{
       logger = res.rows
-      if (logger == undefined){
-       pass
-      }
-      else if(logger != undefined){
+      if (logger.length != 0){
         if (logger[0].u_name != undefined && logger[0].p_word != undefined){
           if (logger[0].u_name == u_name && logger[0].p_word == p_word){
             console.log('This works just fine')
