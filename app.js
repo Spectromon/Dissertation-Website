@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 
 //This works. Requires urlencodedParser however does send an email to the specific inputted email address.
 app.post('/', urlencodedParser, (req,res) =>{
-  console.log(req.body.email) //you will get your data in this as object
+  email = req.body.email //you will get your data in this as object
   u_name = makeid(5)
   p_word = makeid(8)
   var sql = {text: 'INSERT INTO u_info(u_name, p_word, email) VALUES($1,$2,$3);', values: [u_name, p_word, email]}
