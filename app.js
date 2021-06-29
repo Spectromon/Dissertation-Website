@@ -83,6 +83,7 @@ app.post('/signup', urlencodedParser, (req,res) =>{
 app.post('/login',urlencodedParser, (req,res) =>{
   u_name = req.body.username
   p_word = req.body.password
+  var checker = 0
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   client.query(sql, (err, res) =>{
     if(err){
@@ -90,14 +91,17 @@ app.post('/login',urlencodedParser, (req,res) =>{
     }
     else{
       logger = res.rows
-      if (logger[0] == undefined){
-        res.sendFile('login.html', {root: __dirname })
-      }
       else if (logger[0].u_name == u_name && logger[0].p_word == p_word){
         console.log('This works just fine')
-        res.sendFile('index.html', {root: __dirname })
+        checker = 1
       }
     };
+    if (checker == 1){
+      res.sendFile('index.html', {root: __dirname })
+    }
+    else{
+      res.sendFile('login.html', {root: __dirname })
+    }
   })
 })
   
