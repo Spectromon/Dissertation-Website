@@ -112,11 +112,7 @@ app.post('/login',urlencodedParser, (req,res) =>{
 })
 
 function queryMaker(sql){
-  client.query(sql, (err,res)=>{
-    if(err){
-      console.log(err)
-    }
-    return res
+  return client.query(sql)
   })
 
 }
