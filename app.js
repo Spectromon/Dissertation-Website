@@ -85,7 +85,7 @@ app.post('/login',jsonParser, (req,res) =>{
   p_word = req.body.Password
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   var logger = client.query(sql)
-  login = collect(logger.rows)
+  login = collect(logger.rows.json())
   console.log(login.count())
   res.send(logger.rows)
 })
