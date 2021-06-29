@@ -86,7 +86,7 @@ app.post('/login',urlencodedParser, (req,res) =>{
   checker = 0
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   logtest = client.query(sql)
-  console.log(logtest.rows)
+  console.log(logtest)
   client.query(sql, (err, res) =>{
     if(err){
       console.log(err)
