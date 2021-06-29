@@ -91,7 +91,7 @@ app.post('/login',urlencodedParser, (req,res) =>{
     }
     else{
       logger = res.rows
-      else if (logger[0].u_name == u_name && logger[0].p_word == p_word){
+      if (logger[0].u_name == u_name && logger[0].p_word == p_word){
         console.log('This works just fine')
         checker = 1
       }
