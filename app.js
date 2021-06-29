@@ -87,7 +87,7 @@ app.post('/login', urlencodedParser, (req,res) =>{
     if (err) throw err;
     console.log(res[0])
   });
-  res.sendFile('login.html', {root: __dirname }
+  res.sendFile('login.html', {root: __dirname })
 })
   
   
