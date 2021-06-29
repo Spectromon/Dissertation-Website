@@ -57,7 +57,6 @@ app.post('/', urlencodedParser, (req,res) =>{
     if (err){
       console.log(err)
     };
-    client.end();
   });
   var mailOptions = {
     from: 'rgu20daudissertation@gmail.com',
