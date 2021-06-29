@@ -10,4 +10,4 @@ function loginUser(){
             body: JSON.stringify(sqldata)
         };
         console.log(sqldata)  
-fetch ("/login", options)
+fetch ("/login", options)}
