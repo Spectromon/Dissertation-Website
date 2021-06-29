@@ -3,6 +3,7 @@
 // setInterval() #Call a function repeatedly after a delay
 // clearInterval() #Stop above
 const env = process.env.NODE_ENV || 'development'
+const collect = require('collect');
 const express = require('express');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
@@ -85,8 +86,10 @@ app.post('/login', urlencodedParser, (req,res) =>{
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   client.query(sql, (err, res) => {
     if (err) throw err;
-    logger = res.rows
+    logger = collect(res.rows)
     console.log(logger.count())
+
+
   });
   res.sendFile('login.html', {root: __dirname })
 })
