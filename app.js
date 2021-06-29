@@ -91,7 +91,8 @@ app.post('/login',urlencodedParser, async (req,res) =>{
   }
   else if (logger != undefined){
       if (logger.rows.length != 0){
-        console.log('An entry was found')
+        login = logger.rows[0]
+        console.log(login.u_name, login.p_word);
       }
     }
   res.sendFile('login.html', {root: __dirname })
