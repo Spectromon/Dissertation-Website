@@ -86,6 +86,7 @@ app.post('/login', urlencodedParser, (req,res) =>{
   client.query(sql, (err, res) => {
     if (err) throw err;
     for (let row in res.rows) {
+      console.log('1')
       console.log(JSON.stringify(row));
     }
   });
