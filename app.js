@@ -90,7 +90,9 @@ app.post('/login',urlencodedParser, async (req,res) =>{
     console.log('No entry of that username or password')
   }
   else if (logger != undefined){
-      console.log('An entry was found')
+      if (logger.length != 0){
+        console.log('An entry was found')
+      }
     }
   res.sendFile('login.html', {root: __dirname })
                 
