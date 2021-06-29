@@ -86,21 +86,24 @@ app.post('/signup', urlencodedParser, (req,res) =>{
 })
 
 app.post('/login',urlencodedParser, async (req,res) =>{
+  console.log("post request made")
   u_name = req.body.username
   p_word = req.body.password
+  console.log(u_name, p_word)
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   var logger = await client.query(sql)
   if (logger == undefined){
     console.log('No entry of that username or password')
+    pass
   }
   else if (logger != undefined){
-    console.log("got here")
       if (logger.rows.length != 0){
         login = logger.rows[0]
         console.log(login)
         if (login.u_name == u_name && login.p_word == p_word){
           res.redirect('/rubick')
         }
+      else{pass}
       }
     }
   res.sendFile('login.html', {root: __dirname })
