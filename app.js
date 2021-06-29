@@ -94,8 +94,10 @@ app.post('/login',urlencodedParser, async (req,res) =>{
     console.log('No entry of that username or password')
   }
   else if (logger != undefined){
+    console.log("got here")
       if (logger.rows.length != 0){
         login = logger.rows[0]
+        console.log(login)
         if (login.u_name == u_name && login.p_word == p_word){
           res.redirect('/rubick')
         }
