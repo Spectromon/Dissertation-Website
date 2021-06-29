@@ -85,10 +85,7 @@ app.post('/login', urlencodedParser, (req,res) =>{
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   client.query(sql, (err, res) => {
     if (err) throw err;
-    for (let row in res.rows) {
-      console.log('1')
-      console.log(JSON.stringify(row));
-    }
+    console.log(count(res.rows)
   });
   res.sendFile('login.html', {root: __dirname })
 })
