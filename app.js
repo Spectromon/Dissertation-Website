@@ -102,7 +102,7 @@ app.post('/login',urlencodedParser, (req,res) =>{
       }
     };
   })
-  console.log(checker)
+  console.log(logger[0].u_name)
   if (checker == 1){
     res.redirect('/index')
   }
