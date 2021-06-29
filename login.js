@@ -10,4 +10,12 @@ function loginUser(){
             body: JSON.stringify(sqldata)
         };
         console.log(sqldata)  
-fetch ("/login", options)}
+fetch ("/login", options)
+.then((response) => response.json())
+.then((data) => {
+    data.forEach(function(logger){
+        console.log(`${logger.u_name} and ${logger.p_word}`)
+    })
+    }
+)
+}
