@@ -80,13 +80,13 @@ app.post('/signup', urlencodedParser, (req,res) =>{
   res.redirect('/login')
 })
 
-app.post('/login',urlencodedParser, (req,res) =>{
+app.post('/login',urlencodedParser, async (req,res) =>{
   u_name = req.body.username
   p_word = req.body.password
   checker = 0
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
-  logger = queryMaker(sql);
-  console.log("1" + logger)
+  var logger = await client.query(sql)
+  console.log(logger)
   // client.query(sql, checker = (err, res) =>{
   //   if(err){
   //     console.log(err)
@@ -110,15 +110,6 @@ app.post('/login',urlencodedParser, (req,res) =>{
   //   res.sendFile('login.html', {root: __dirname })
   // }
 })
-
-function queryMaker(sql){
-  loge = client.query(sql, (err, res) => {
-    return res.rows
-  })
-  console.log("2" + loge)
-  return loge
-
-}
   
 // Establishing the port 
 const PORT = process.env.PORT ||5000;
