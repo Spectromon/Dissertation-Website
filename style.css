@@ -31,7 +31,7 @@ body{
     overflow: overlay;
     scrollbar-width: thin;
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-    height: 700px;
+    height: 2000px;
     margin-left: 0;
     background: linear-gradient(180deg, #0072CE 0, #003087 100%);
     /* background: linear-gradient(180deg, #000000 0, #000000 25%, #2cb5e8 75%);  */
@@ -119,6 +119,7 @@ body{
     transition: all 0.5s ease;
     border-width: 0 0 2px 0 !important;
     cursor: pointer !important;
+    padding: 14px 30px 12px 30px !important;
     /* border: 2px solid rgb(0,	94, 184) !important; */
     padding: 7px 15px 6px 15px !important;
     border-radius: 55px !important;
@@ -148,6 +149,7 @@ body{
     transition: all 0.5s ease;
     border-width: 0 0 2px 0 !important;
     cursor: pointer !important;
+    padding: 14px 30px 12px 30px !important;
     /* border: 2px solid rgb(0,	94, 184) !important; */
     padding: 7px 15px 6px 15px !important;
     border-radius: 55px !important;
@@ -175,6 +177,7 @@ body{
     transition: all 0.5s ease;
     border-width: 0 0 2px 0 !important;
     cursor: pointer !important;
+    padding: 14px 30px 12px 30px !important;
     /* border: 2px solid rgb(0,	94, 184) !important; */
     padding: 7px 15px 6px 15px !important;
     border-radius: 55px !important;
@@ -202,6 +205,7 @@ body{
     transition: all 0.5s ease;
     border-width: 0 0 2px 0 !important;
     cursor: pointer !important;
+    padding: 14px 30px 12px 30px !important;
     /* border: 2px solid rgb(0,	94, 184) !important; */
     padding: 7px 15px 6px 15px !important;
     border-radius: 55px !important;
@@ -216,248 +220,82 @@ body{
     padding: 14px 30px 12px 30px !important;
 
 }
-.gamezone{
+
+.maincontainer{
+    
+    align-content: center;
+    margin-top: 400px;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+}
+
+.maincontent{
     background-color: transparent;
-    width: 100vw !important;
-    display: flex;
-    margin-top: 250px;
-    align-content: center !important;
-}
-.internalgamezone{
-    align-content: center !important;
-    display: flex !important;
-}
-.containerofcontainers{
-    
-    width: 100vw !important;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
-}
-.outsidecontainer_main{
-    margin-right: -450px;
-    margin-left: 450px;
-    display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
-    justify-items: flex-start !important;
-    justify-content: flex-start !important;
-    align-content: center;
-    flex: 0 0 50%;
-    display: flex;
-}
-
-.outsidecontainer_change{
-    margin-left: -450px;
-    display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
-    justify-items: flex-end !important;
-    justify-content: flex-end !important;
-    align-content: center;
-    flex: 0 0 50%;
-    display: flex;
-}
-.container{
-    background: white;
-    display: block;
-}
-
-#tile{
-    
-    width: 100px;
-    height: 100px;
-    transition: 0.5s ease;
-    margin: 5px;
-}
-
-#tile-alt{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-}
-#tile2{
-    width: 100px;
-    height: 100px;
-    transition: 0.5s ease;
-    margin: 5px;
-}
-#tile2-alt{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-}
-#tile3{
-    width: 100px;
-    height: 100px;
-    transition: 0.5s ease;
-    margin: 5px;
-}
-#tile3-alt{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-}
-#tile4{
-    width: 100px;
-    height: 100px;
-    transition: 0.5s ease;
-    margin: 5px;
-}
-#tile4-alt{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-}
-#tile5{
-    width: 100px;
-    height: 100px;
-    transition: 0.5s ease;
-    margin: 5px;
-}
-#tile5-alt{
-    width: 100px;
-    height: 100px;;
-    margin: 5px;
-}
-#tile6{
-    width: 100px;
-    height: 100px;
-    transition: 0.5s ease;
-    margin: 5px;
-}
-#tile6-alt{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-}
-#tile7{
-    width: 100px;
-    height: 100px;
-    transition: 0.5s ease;
-    margin: 5px;
-}
-#tile7-alt{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-}
-#tile8{
-    width: 100px;
-    height: 100px;
-    transition: 0.5s ease;
-    margin: 5px;
-}
-#tile8-alt{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-}
-#tile9{
-    width: 100px;
-    height: 100px;
-    transition: 0.5s ease;
-    margin: 5px;
-}
-#tile9-alt{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-}
-
-.red{
-    background-color: red;
-}
-
-.blue{
-    background-color: blue;
-}
-
-.yellow{
-    background-color: yellow;
-}
-
-.green{
-    background-color: green;
-}
-
-.orange{
-    background-color: orange;
-}
-
-.purple{
-    background-color: purple;
-}
-
-.black{
-    background-color: black;
-}
-
-.white{
-    margin-right: -5px;
-    background-color: white;
-}
-
-.buttoninformation{
-    background-color: white;
-    border: 2px white solid;
+    width: 1400px; /* Can be in percentage also. */
+    border: 2px solid transparent;
     border-radius: 55px;
-    margin-top: 100px;
-    margin-bottom: -100px;
-    display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
-
+    height: 100px;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
 }
-
-.buttoninformation2{
-    width: 100vw !important;
-    display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
-
-}
-
-.buttoninformation3{
-    display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
-    flex-wrap: wrap;
-    justify-items: flex-end !important;
-    justify-content: flex-end !important;
-    flex: 0 0 50%;
-    max-width: 75%;
+.explorebox{
+    margin-top: 25px;
     
-
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: row !important;
+    flex: 0 0 75%;
+    max-width: 50%;
+    justify-content: flex-end !important;
 }
-
-.newgame{
-    margin-right: 250px;
+.explorelnk   {
+    
     font-family: sans-serif;
     font-size: 18px;
+
+
+    background-color: white;
+    color: #005EB8;
+    transition: all 0.5s ease;
+    border-width: 0 0 2px 0 !important;
     cursor: pointer !important;
-    padding: 14px 30px 12px 30px !important;
+    /* border: 2px solid rgb(0,	94, 184) !important; */
     padding: 7px 15px 6px 15px !important;
     border-radius: 55px !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
     text-shadow: none !important;
 }
 
-.moves{
-    font-family: sans-serif;
-    font-size: 18px;
-    margin-right: -200px;
+.explorelnk:hover {
+    background-color: #003087;
+    margin-right: -10px; 
+    margin-top: -5px;
+    /* Margins make the link stay central. */
+    color: white;
+    padding: 14px 30px 12px 30px !important;
 }
 
-.information{
-    font-family: sans-serif;
-    font-size: 18px;
-    margin-right: -550px;
-
+.secondarycontainer{
+    align-content: center;
+    margin-top: 400px;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
 }
 
-.colourinfo{
-    font-family: sans-serif;
-    font-size: 18px;
-    margin-right: -300px;
+.secondarycontent{
+    background-color: white;
+    width: 1400px; /* Can be in percentage also. */
+    border: 2px solid transparent;
+    border-radius: 55px;
+    height: 800px;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 10px;
+    position: relative;
 }
