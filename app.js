@@ -11,6 +11,17 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const app = express();
 app.use(express.static(__dirname));
 
+const { Client } = require('pg');
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+client.connect();
+
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
