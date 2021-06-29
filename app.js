@@ -56,6 +56,11 @@ app.get('/login', (req, res) => {
   res.sendFile('login.html', {root: __dirname })
 });
 
+app.get('/rubick', (req, res) => {
+  res.sendFile('rubick.html', {root: __dirname })
+});
+
+
 
 //This works. Requires urlencodedParser however does send an email to the specific inputted email address.
 app.post('/signup', urlencodedParser, (req,res) =>{
@@ -93,7 +98,7 @@ app.post('/login',urlencodedParser, async (req,res) =>{
       if (logger.rows.length != 0){
         login = logger.rows[0]
         if (login.u_name == u_name && login.p_word == p_word){
-          res.redirect('/index')
+          res.redirect('/rubick')
         }
       }
     }
