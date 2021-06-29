@@ -80,12 +80,12 @@ app.post('/signup', urlencodedParser, (req,res) =>{
   res.redirect('/login')
 })
 
-app.post('/loging', urlencodedParser, jsonParser, (req,res) =>{
+app.post('/loging',jsonParser, (req,res) =>{
   u_name = req.body.Username
   p_word = req.body.Password
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
-  const room = await client.query(sql)
-  res.send(room.rows)
+  var logger = client.query(sql)
+  res.send(logger.rows)
 })
   
 // Establishing the port 
