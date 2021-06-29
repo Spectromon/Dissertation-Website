@@ -86,7 +86,7 @@ app.post('/login',urlencodedParser, (req,res) =>{
   checker = 0
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   logger = queryMaker(sql);
-  console.log(logger)
+  console.log("1" + logger)
   // client.query(sql, checker = (err, res) =>{
   //   if(err){
   //     console.log(err)
@@ -114,10 +114,10 @@ app.post('/login',urlencodedParser, (req,res) =>{
 function queryMaker(sql){
   loge = client.query(sql, (err, res) => {
     loge = res.rows
-    console.log(loge)
+    console.log("3" + loge)
     return loge
   })
-  console.log(loge)
+  console.log("2" + loge)
   return loge
 
 }
