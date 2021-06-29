@@ -85,34 +85,38 @@ app.post('/login',urlencodedParser, (req,res) =>{
   p_word = req.body.password
   checker = 0
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
-  logtest = client.query(sql)
-  console.log(logtest)
-  client.query(sql, (err, res) =>{
-    if(err){
-      console.log(err)
-    }
-    else{
-      logger = res.rows
-      if (logger.length != 0){
-        if (logger[0].u_name != undefined && logger[0].p_word != undefined){
-          if (logger[0].u_name == u_name && logger[0].p_word == p_word){
-            return 1
-          }
-          else{ 
-            return 0 
-          }
-        }
-      }
-    };
-  })
-  console.log(checker)
-  if (checker == 1){
-    res.redirect('/index')
-  }
-  else if (checker == 0){
-    res.redirect('/login')
-  }
+  logger = queryMaker(sql);
+  console.log(logger.rows)
+  // client.query(sql, checker = (err, res) =>{
+  //   if(err){
+  //     console.log(err)
+  //   }
+  //   else{
+  //     logger = res.rows
+  //     if (logger.length != 0){
+  //       if (logger[0].u_name != undefined && logger[0].p_word != undefined){
+  //         if (logger[0].u_name == u_name && logger[0].p_word == p_word){
+  //           checker = 1
+  //           console.log(checker)
+  //         }
+  //       }
+  //     }
+  //   };
+  // })
+  // if (checker == 1){
+  //   res.sendFile('index.html', {root: __dirname })
+  // }
+  // else{
+  //   res.sendFile('login.html', {root: __dirname })
+  // }
 })
+
+function queryMaker(sql){
+  client.query(sql, (err,res)=>{
+    return res
+  })
+
+}
   
 // Establishing the port 
 const PORT = process.env.PORT ||5000;
