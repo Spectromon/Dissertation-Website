@@ -76,7 +76,7 @@ app.post('/signup', urlencodedParser, (req,res) =>{
 
   transporter.sendMail(mailOptions);
 
-  res.redirect('/login', {root: __dirname })
+  res.redirect('/login', 200)
 })
   
 // Establishing the port 
