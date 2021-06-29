@@ -44,12 +44,16 @@ charactersLength));
   
 // Getting Request
 app.get('/', (req, res) => {
+  res.sendFile('index.html', {root: __dirname })
+});
+
+app.get('/signup', (req, res) => {
   res.sendFile('signup.html', {root: __dirname })
 });
 
 //This works. Requires urlencodedParser however does send an email to the specific inputted email address.
-app.post('/', urlencodedParser, (req,res) =>{
-  email = req.body.email //you will get your data in this as object
+app.post('/signup', urlencodedParser, (req,res) =>{
+  email = req.body.email
   u_name = makeid(5)
   p_word = makeid(8)
   var sql = {text: 'INSERT INTO u_info(u_name, p_word, email) VALUES($1,$2,$3);', values: [u_name, p_word, email]}
@@ -67,7 +71,7 @@ app.post('/', urlencodedParser, (req,res) =>{
 
   transporter.sendMail(mailOptions);
 
-  res.sendFile('signup.html', {root: __dirname })
+  res.redirect('/login', {root: __dirname })
 })
   
 // Establishing the port 
