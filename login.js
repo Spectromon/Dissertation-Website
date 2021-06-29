@@ -10,7 +10,7 @@ function loginUser(){
             body: JSON.stringify(sqldata)
         };
         console.log(sqldata)  
-fetch ("/login", options)
+fetch ("/loging", options)
 .then((response) => response.json())
 .then((data) => {
     data.forEach(function(logger){
