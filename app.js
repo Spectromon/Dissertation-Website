@@ -92,7 +92,9 @@ app.post('/login',urlencodedParser, async (req,res) =>{
   else if (logger != undefined){
       if (logger.rows.length != 0){
         login = logger.rows[0]
-        console.log(login.u_name, login.p_word);
+        if (login.u_name == u_name && login.p_word == p_word){
+          res.redirect('/index')
+        }
       }
     }
   res.sendFile('login.html', {root: __dirname })
