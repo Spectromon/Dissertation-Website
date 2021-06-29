@@ -90,7 +90,13 @@ app.post('/login',urlencodedParser, (req,res) =>{
     }
     else{
       logger = res.rows
-      console.log(logger[0].u_name)
+      if (logger[0] == undefined){
+        res.sendFile('login.html', {root: __dirname })
+      }
+      else if (logger[0].u_name == u_name && logger[0].p_word == p_word){
+        console.log('This works just fine')
+        res.sendFile('index.html', {root: __dirname })
+      }
     };
   })
 })
