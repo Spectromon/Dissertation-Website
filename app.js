@@ -109,7 +109,6 @@ app.post('/login',urlencodedParser, (req,res) =>{
   }
 })
   
-  
 // Establishing the port 
 const PORT = process.env.PORT ||5000;
   
