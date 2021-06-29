@@ -80,12 +80,13 @@ app.post('/signup', urlencodedParser, (req,res) =>{
   res.redirect('/login')
 })
 
+var checker = 0
 app.post('/login',urlencodedParser, (req,res) =>{
   u_name = req.body.username
   p_word = req.body.password
-  var checker = 0
+  checker = 0
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
-  client.query(sql, function (err, res, checker){
+  client.query(sql, function (err, res){
     if(err){
       console.log(err)
     }
@@ -94,7 +95,6 @@ app.post('/login',urlencodedParser, (req,res) =>{
       if (logger.length != 0){
         if (logger[0].u_name != undefined && logger[0].p_word != undefined){
           if (logger[0].u_name == u_name && logger[0].p_word == p_word){
-           
             checker = 1
             console.log(checker)
           }
