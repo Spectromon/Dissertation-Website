@@ -3,7 +3,7 @@
 // setInterval() #Call a function repeatedly after a delay
 // clearInterval() #Stop above
 const env = process.env.NODE_ENV || 'development'
-const collect = require('collect.js');
+const collect = require('collect');
 const express = require('express');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
