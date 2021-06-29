@@ -112,7 +112,11 @@ app.post('/login',urlencodedParser, (req,res) =>{
 })
 
 function queryMaker(sql){
-  loge = client.query(sql, (err, res) => {return res})
+  loge = client.query(sql, (err, res) => {
+    loge = res.rows
+    console.log(loge)
+    return loge
+  })
   console.log(loge)
   return loge
 
