@@ -90,7 +90,7 @@ app.post('/login',urlencodedParser, (req,res) =>{
     }
     else{
       logger = res.rows
-      console.log(logger.username)
+      console.log(logger[0])
     };
   })
 })
