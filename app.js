@@ -100,13 +100,13 @@ app.post('/login',urlencodedParser, (req,res) =>{
         }
       }
     };
-    if (checker == 1){
-      res.sendFile('index.html', {root: __dirname })
-    }
-    else{
-      res.sendFile('login.html', {root: __dirname })
-    }
   })
+  if (checker == 1){
+    res.sendFile('index.html', {root: __dirname })
+  }
+  else{
+    res.sendFile('login.html', {root: __dirname })
+  }
 })
   
   
