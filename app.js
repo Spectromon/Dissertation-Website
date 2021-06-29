@@ -95,9 +95,11 @@ app.post('/login',urlencodedParser, (req,res) =>{
        pass
       }
       else if(logger != undefined){
-        if (logger[0].u_name == u_name && logger[0].p_word == p_word){
-          console.log('This works just fine')
-          checker = 1
+        if (logger[0].u_name != undefined && logger[0].p_word != undefined{
+          if (logger[0].u_name == u_name && logger[0].p_word == p_word){
+            console.log('This works just fine')
+            checker = 1
+          }
         }
       }
     };
