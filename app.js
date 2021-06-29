@@ -97,6 +97,7 @@ app.post('/login',urlencodedParser, async (req,res) =>{
     pass
   }
   else if (logger != undefined){
+    console.log ('There is a logger')
       if (logger.rows.length != 0){
         login = logger.rows[0]
         console.log(login)
