@@ -87,6 +87,7 @@ app.post('/login',jsonParser, (req,res) =>{
   var logger = client.query(sql)
   login = collect(logger.rows)
   console.log(login.count())
+  res.send(logger.rows)
 })
   
 // Establishing the port 
