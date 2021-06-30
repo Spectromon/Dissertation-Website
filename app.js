@@ -56,6 +56,7 @@ charactersLength));
   
 // Getting Request
 app.get('/', (req, res) => {
+  console.log('index.html loading')
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
     else if (session != undefined && session != null) {
