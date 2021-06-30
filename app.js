@@ -14,7 +14,6 @@ app.use(express.static(__dirname));
 
 const session = require('express-session');
 
-const app = express();
 app.use(express.static(__dirname));
 app.use(session({
   secret: 'monkeybanana',
