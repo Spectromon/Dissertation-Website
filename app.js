@@ -53,9 +53,9 @@ charactersLength));
  return result;
 }
   
-  
 // Getting Request
 app.get('/', (req, res) => {
+  console.log('index.html loading')
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
     else if (session != undefined && session != null) {
@@ -174,23 +174,6 @@ app.post('/login', urlencodedParser, async (req,res) =>{
               else if (sessions.length == 0){ pass }
             }
           })
-          
-          req.session.authenticated = true;
-          req.session.user = {u_name};
-          store.set(req.sessionID, session, (err) =>{
-            if (err) console.log(err)
-          })
-          res.redirect('/rubick')
-        }
-        else{
-          res.redirect('/signup')
-        }
-      }
-      else{
-        res.sendFile('login.html', {root: __dirname })
-        }
-    }
-})
           
           req.session.authenticated = true;
           req.session.user = {u_name};
