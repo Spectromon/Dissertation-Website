@@ -123,9 +123,9 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                 for(let session in sessions){
                   console.log(u_name)
                   console.log(session.username)
-                  if (u_name == session.username[0]){
-                    console.log(u_name + " is already present in the session store. A new one must be given")
-                  }
+//                   if (u_name == session.username[0]){
+//                     console.log(u_name + " is already present in the session store. A new one must be given")
+//                   }
                 }
               }
               else if (sessions.length == 0){console.log('Session lenght is 0')}
