@@ -122,11 +122,14 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                 for(let session in sessions){
                   
                   store.get(session, (err, session) =>{
-                      console.log(u_name)
                       if (err) throw err;
                       else if (session != undefined && session != null) {
                         console.log(session.user)
-                        if(session.user == u_name)console.log('They are the same')
+                        console.log(u_name)
+                        if(session.user == u_name){
+                          console.log('They are the same')
+                        }
+                        else {console.log('They are different')
                                    }
                   })
 //                   if (u_name == session.username[0]){
