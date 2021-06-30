@@ -150,7 +150,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                               store.set(req.sessionID, session, (err) =>{
                                 if (err) console.log(err)
                               })
-                              req.session.reload((err)=>{if err throw err});
+                              req.session.reload((err)=>{if (err) throw err});
                               res.redirect('/rubick')
                              })
                           }                          
