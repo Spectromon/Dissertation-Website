@@ -13,12 +13,14 @@ const app = express();
 app.use(express.static(__dirname));
 
 const session = require('express-session');
+const store = new session.MemoryStore();
 
 app.use(express.static(__dirname));
 app.use(session({
   secret: 'monkeybanana',
   cookie: {maxAge: 30000},
-  saveUninitialized: false
+  saveUninitialized: false,
+  store
 }))
 
 const { Client } = require('pg');
