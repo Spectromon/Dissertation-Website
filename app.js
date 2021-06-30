@@ -141,9 +141,11 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                           if(s.user.u_name == u_name){
                             console.log(s)
                             store.destroy(s, (err) =>{if (err) throw err})
+                            req.session.destroy();
                             req.session.regenerate(function(err) {
                               if (err) throw err;
                               console.log(req.sessionID)
+                               
                               req.session.authenticated = true;
                               req.session.user = {u_name};
                               store.set(req.sessionID, session, (err) =>{
