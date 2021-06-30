@@ -60,8 +60,7 @@ app.get('/', (req, res) => {
     if (err) throw err;
     else if (session != undefined && session != null) {
       console.log('The session was found')
-      res.redirect('/rubick')}; 
-                 }
+      res.redirect('/rubick')}                 
      else{ 
        console.log('no session found')
        res.sendFile('signup.html', {root: __dirname })
@@ -73,8 +72,7 @@ app.get('/signup', (req, res) => {
     if (err) throw err;
     else if (session != undefined && session != null) {
       console.log('The session was found')
-      res.redirect('/rubick')}; 
-                 }
+      res.redirect('/rubick')}
      else{ 
        console.log('no session found')
        res.sendFile('signup.html', {root: __dirname })
@@ -87,8 +85,7 @@ app.get('/login', (req, res) => {
     if (err) throw err;
     else if (session != undefined && session != null) {
       console.log('The session was found')
-      res.redirect('/rubick')}; 
-                 }
+      res.redirect('/rubick')}                 
      else{ 
        console.log('no session found')
        res.sendFile('login.html', {root: __dirname })
