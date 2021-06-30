@@ -56,15 +56,44 @@ charactersLength));
   
 // Getting Request
 app.get('/', (req, res) => {
-  res.sendFile('index.html', {root: __dirname })
+  store.get(req.sessionID, (err, session) =>{
+    if (err) throw err;
+    else if (session != undefined && session != null) {
+      console.log('The session was found')
+      res.redirect('/rubick')}; 
+                 }
+     else{ 
+       console.log('no session found')
+       res.sendFile('signup.html', {root: __dirname })
+    })
 });
 
 app.get('/signup', (req, res) => {
-  res.sendFile('signup.html', {root: __dirname })
+  store.get(req.sessionID, (err, session) =>{
+    if (err) throw err;
+    else if (session != undefined && session != null) {
+      console.log('The session was found')
+      res.redirect('/rubick')}; 
+                 }
+     else{ 
+       console.log('no session found')
+       res.sendFile('signup.html', {root: __dirname })
+    })
+});
 });
 
 app.get('/login', (req, res) => {
-  res.sendFile('login.html', {root: __dirname })
+  store.get(req.sessionID, (err, session) =>{
+    if (err) throw err;
+    else if (session != undefined && session != null) {
+      console.log('The session was found')
+      res.redirect('/rubick')}; 
+                 }
+     else{ 
+       console.log('no session found')
+       res.sendFile('login.html', {root: __dirname })
+    })
+});
 });
 
 app.get('/rubick', (req, res) => {
@@ -131,36 +160,36 @@ app.post('/login', urlencodedParser, async (req,res) =>{
         login = logger.rows[0]
         if (login.u_name == u_name && login.p_word == p_word){
           
-          store.all((err, sessions) =>{
-            if (err) console.log(err)
-            else if (sessions) {
-              if (sessions.length !=0){
-                for(let sesh in sessions){
-                  store.get(sesh, (err, s) =>{
-                        if (err) throw err;
-                        else if (s != undefined && s != null) {
-                          if(s.user.u_name == u_name){
-                            console.log(s)
-                            store.destroy(s, (err) =>{if (err) throw err})
-                            req.session.regenerate(function(err) {
-                              if (err) throw err;})
-                            console.log(req.sessionID)
-                            console.log(store)
-//                             req.session.authenticated = true;
-//                             req.session.user = {u_name};
-//                             store.set(req.sessionID, session, (err) =>{
-//                               if (err) console.log(err)
-//                              })
-//                             console.log(store)
-//                             res.redirect('/rubick')
-                          }                          
-                        }
-                      })
-                  }
-               }
-              else if (sessions.length == 0){ pass }
-            }
-          })
+// //           store.all((err, sessions) =>{
+// //             if (err) console.log(err)
+// //             else if (sessions) {
+// //               if (sessions.length !=0){
+// //                 for(let sesh in sessions){
+// //                   store.get(sesh, (err, s) =>{
+// //                         if (err) throw err;
+// //                         else if (s != undefined && s != null) {
+// //                           if(s.user.u_name == u_name){
+// //                             console.log(s)
+// //                             store.destroy(s, (err) =>{if (err) throw err})
+// //                             req.session.regenerate(function(err) {
+// //                               if (err) throw err;})
+// //                             console.log(req.sessionID)
+// //                             console.log(store)
+// // //                             req.session.authenticated = true;
+// // //                             req.session.user = {u_name};
+// // //                             store.set(req.sessionID, session, (err) =>{
+// // //                               if (err) console.log(err)
+// // //                              })
+// // //                             console.log(store)
+// // //                             res.redirect('/rubick')
+// //                           }                          
+// //                         }
+// //                       })
+// //                   }
+// //                }
+//               else if (sessions.length == 0){ pass }
+//             }
+//           })
           
           req.session.authenticated = true;
           req.session.user = {u_name};
