@@ -119,12 +119,15 @@ app.post('/login', urlencodedParser, async (req,res) =>{
           store.all((err, sessions) =>{
             if (err) console.log(err)
             else if (sessions) {
-              for(let session in sessions){
-                console.log(u_name)
-                if (u_name == session.username[0]){
-                  console.log(u_name + " is already present in the session store. A new one must be given")
+              if (sessions.length !=0){
+                for(let session in sessions){
+                  console.log(u_name)
+                  if (u_name == session.username[0]){
+                    console.log(u_name + " is already present in the session store. A new one must be given")
+                  }
                 }
               }
+              else if (sessions.length == 0){console.log('Session lenght is 0')}
             }
           })
           req.session.authenticated = true;
