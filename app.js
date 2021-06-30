@@ -140,6 +140,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                         else if (session != undefined && session != null) {
                           if(session.user.u_name == u_name){
                             store.destroy(session, (err) =>{if (err) throw err})
+                            req.session.destroy()
                             console.log('A session should have been deleted')
                           }                          
                         }
