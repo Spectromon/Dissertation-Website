@@ -118,7 +118,14 @@ app.post('/login', urlencodedParser, async (req,res) =>{
         if (login.u_name == u_name && login.p_word == p_word){
           store.all((err, sessions) =>{
             if (err) console.log(err)
-            else if (sessions) console.log(sessions)
+            else if (sessions) {
+              for(let session in sessions){
+                console.log(u_name)
+                if (u_name == session.username[0]){
+                  console.log(u_name + " is already present in the session store. A new one must be given")
+                }
+              }
+            }
           })
           req.session.authenticated = true;
           req.session.user = {u_name};
