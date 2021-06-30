@@ -68,6 +68,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/rubick', (req, res) => {
+  console.log(req.sessionID);
   res.sendFile('rubick.html', {root: __dirname })
 });
 
@@ -109,6 +110,8 @@ app.post('/login', urlencodedParser, async (req,res) =>{
       if (logger.rows.length != 0){
         login = logger.rows[0]
         if (login.u_name == u_name && login.p_word == p_word){
+          req.session.authenticated = true;
+          req.session.user = {u_name, p_word};
           res.redirect('/rubick')
         }
         else{
