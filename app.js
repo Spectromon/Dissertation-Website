@@ -53,9 +53,10 @@ charactersLength));
  return result;
 }
 
-app.get('/', (req,res =>{
+app.get('/', (req,res) =>{
   res.redirect('/index')
-}
+})
+  
   
 // Getting Request
 app.get('/index', (req, res) => {
