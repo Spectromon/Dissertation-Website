@@ -68,6 +68,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/rubick', (req, res) => {
+  console.log(req.sessionID)
   store.get(req.sessionID, (err, session) =>{
   if (err) throw err;
   else if (session != undefined && session != null) {
@@ -139,6 +140,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                         else if (session != undefined && session != null) {
                           if(session.user.u_name == u_name){
                             store.destroy(session, (err) =>{if (err) throw err})
+                            console.log('A session should have been deleted')
                           }                          
                         }
                       })
