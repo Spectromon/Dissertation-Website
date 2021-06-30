@@ -129,7 +129,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                         console.log(session.user)
                         if(session.user == u_name)console.log('They are the same')
                                    }
-                  }
+                  })
 //                   if (u_name == session.username[0]){
 //                     console.log(u_name + " is already present in the session store. A new one must be given")
 //                   }
