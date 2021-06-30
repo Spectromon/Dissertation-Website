@@ -5,14 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <script src="login.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css"></link>
 </head>
 <body>
+    <header class = 'header'>
+        <div class = 'topbar'>
+            <div class = 'navbar'></div>
+                <div class = 'logobox'>
+                    <a href = "/">
+                    <img class = 'logo' src="brain.png" alt="brain image">
+                    </a>
+                </div>
+                <div class = 'linkbox'>
+                </div>
+            </div>
+        </div>
+    </header>
+<div class = 'userinput'>
+    <div class = 'userinputcenter'>
     <form method = 'POST'>
         <input type="text" class = 'login' id="username" name="username" placeholder = 'Username'>
-        <input type="password" class = 'login' id="password" name="password" placeholder = 'Password'>
-        <input type='submit'/>
+        <input type="password" class = 'login' id="password" name="pasword" placeholder = 'Password'>
+        <input type='submit' class = 'loginlnk submitlogin'/>
     </form>
+    </div>
+</div>
     
 </body>
 </html>
