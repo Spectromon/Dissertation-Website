@@ -156,36 +156,41 @@ app.post('/login', urlencodedParser, async (req,res) =>{
         login = logger.rows[0]
         if (login.u_name == u_name && login.p_word == p_word){
           
-// //           store.all((err, sessions) =>{
-// //             if (err) console.log(err)
-// //             else if (sessions) {
-// //               if (sessions.length !=0){
-// //                 for(let sesh in sessions){
-// //                   store.get(sesh, (err, s) =>{
-// //                         if (err) throw err;
-// //                         else if (s != undefined && s != null) {
-// //                           if(s.user.u_name == u_name){
-// //                             console.log(s)
-// //                             store.destroy(s, (err) =>{if (err) throw err})
-// //                             req.session.regenerate(function(err) {
-// //                               if (err) throw err;})
-// //                             console.log(req.sessionID)
-// //                             console.log(store)
-// // //                             req.session.authenticated = true;
-// // //                             req.session.user = {u_name};
-// // //                             store.set(req.sessionID, session, (err) =>{
-// // //                               if (err) console.log(err)
-// // //                              })
-// // //                             console.log(store)
-// // //                             res.redirect('/rubick')
-// //                           }                          
-// //                         }
-// //                       })
-// //                   }
-// //                }
-//               else if (sessions.length == 0){ pass }
-//             }
-//           })
+          store.all((err, sessions) =>{
+            if (err) console.log(err)
+            else if (sessions) {
+              if (sessions.length !=0){
+                for(let sesh in sessions){
+                  store.get(sesh, (err, s) =>{
+                        if (err) throw err;
+                        else if (s != undefined && s != null) {
+                          if(s.user.u_name == u_name){
+                            res.redirect('/rubick')
+                          }                          
+                        }
+                      })
+                  }
+               }
+              else if (sessions.length == 0){ pass }
+            }
+          })
+          
+          req.session.authenticated = true;
+          req.session.user = {u_name};
+          store.set(req.sessionID, session, (err) =>{
+            if (err) console.log(err)
+          })
+          res.redirect('/rubick')
+        }
+        else{
+          res.redirect('/signup')
+        }
+      }
+      else{
+        res.sendFile('login.html', {root: __dirname })
+        }
+    }
+})
           
           req.session.authenticated = true;
           req.session.user = {u_name};
