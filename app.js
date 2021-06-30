@@ -68,7 +68,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/rubick', (req, res) => {
-  console.log(req.sessionID);
+  var sessioncheck = store.get(req.sessionID)
   res.sendFile('rubick.html', {root: __dirname })
 });
 
