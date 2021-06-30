@@ -282,6 +282,9 @@ input[type=text], input[type=password] {
     border-radius: 55px;
     box-sizing: border-box;
   }
+input:focus{
+    outline: none;
+}
 
   .submitlogin   {
     display: block;
