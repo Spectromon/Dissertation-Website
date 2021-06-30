@@ -71,7 +71,6 @@ app.get('/rubick', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
   if (err) throw err;
   else if (session != undefined && session != null) {
-    console.log(session.user)
     res.sendFile('rubick.html', {root: __dirname })
                }
    else{ res.redirect('/login')}; 
