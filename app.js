@@ -12,6 +12,16 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const app = express();
 app.use(express.static(__dirname));
 
+const session = require('express-session');
+
+const app = express();
+app.use(express.static(__dirname));
+app.use(session({
+  secret: 'monkeybanana',
+  cookie: {maxAge: 30000},
+  saveUninitialized: false
+}))
+
 const { Client } = require('pg');
 
 const client = new Client({
@@ -86,7 +96,7 @@ app.post('/signup', urlencodedParser, (req,res) =>{
 })
 
 app.post('/login', urlencodedParser, async (req,res) =>{
-  console.log("post request made")
+  console.log(req.sessionID);
   u_name = req.body.username
   p_word = req.body.password
   console.log(u_name, p_word)
