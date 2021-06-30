@@ -52,15 +52,10 @@ charactersLength));
  }
  return result;
 }
-
-app.get('/', (req,res) =>{
-  res.redirect('/index')
-})
   
   
 // Getting Request
-app.get('/index', (req, res) => {
-  console.log('index.html loading')
+app.get('/', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
     else if (session != undefined && session != null) {
