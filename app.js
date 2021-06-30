@@ -116,6 +116,9 @@ app.post('/login', urlencodedParser, async (req,res) =>{
         if (login.u_name == u_name && login.p_word == p_word){
           req.session.authenticated = true;
           req.session.user = {u_name, p_word};
+          store.set(req.sessionID, session, (err) =>{
+            if (err) console.log(err)
+          })
           res.redirect('/rubick')
         }
         else{
