@@ -73,8 +73,8 @@ app.get('/rubick', (req, res) => {
   else if (session != undefined && session != null) {
     console.log(session.user)
     res.sendFile('rubick.html', {root: __dirname })
-               };
-   else{ res.redirect('/login')}    
+               }
+   else{ res.redirect('/login')}; 
   })
 });
 
