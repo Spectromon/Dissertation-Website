@@ -82,7 +82,7 @@ app.post('/rubick', (req, res) => {
     if (err) throw err;
     else if (session != undefined && session != null) {
       console.log('The session was found')
-      res.status(200).end();
+      res.sendFile('rubick.html', {root: __dirname })
                  }
      else{ 
        console.log('no session found')
