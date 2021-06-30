@@ -115,31 +115,26 @@ app.post('/login', urlencodedParser, async (req,res) =>{
       if (logger.rows.length != 0){
         login = logger.rows[0]
         if (login.u_name == u_name && login.p_word == p_word){
+          
           store.all((err, sessions) =>{
             if (err) console.log(err)
             else if (sessions) {
               if (sessions.length !=0){
                 for(let session in sessions){
-                  
                   store.get(session, (err, session) =>{
                         if (err) throw err;
                         else if (session != undefined && session != null) {
-                          console.log(session.user.u_name)
-                          console.log(u_name)
                           if(session.user.u_name == u_name){
-                            console.log('They are the same')
-                          }
-                          else {console.log('They are different')}
+                            store.destroy(session, (err) =>{if (err) throw err})
+                          }                          
                         }
                       })
-//                   if (u_name == session.username[0]){
-//                     console.log(u_name + " is already present in the session store. A new one must be given")
-//                   }
-                }
-              }
-              else if (sessions.length == 0){console.log('Session lenght is 0')}
+                  }
+               }
+              else if (sessions.length == 0){ pass }
             }
           })
+          
           req.session.authenticated = true;
           req.session.user = {u_name};
           store.set(req.sessionID, session, (err) =>{
