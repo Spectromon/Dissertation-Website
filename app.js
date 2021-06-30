@@ -117,8 +117,8 @@ app.post('/login', urlencodedParser, async (req,res) =>{
         login = logger.rows[0]
         if (login.u_name == u_name && login.p_word == p_word){
           store.all(err, sessions =>{
-            if (err){console.log(err)}
-            console.log(sessions)
+            if (err) console.log(err)
+            else if (sessions) console.log(sessions)
           })
           req.session.authenticated = true;
           req.session.user = {u_name};
