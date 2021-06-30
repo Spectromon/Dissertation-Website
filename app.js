@@ -18,7 +18,7 @@ const store = new session.MemoryStore();
 app.use(express.static(__dirname));
 app.use(session({
   secret: 'monkeybanana',
-  cookie: {maxAge: 30000},
+  cookie: {maxAge: null},
   saveUninitialized: false,
   store
 }))
