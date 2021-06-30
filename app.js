@@ -98,11 +98,9 @@ app.post('/login', urlencodedParser, async (req,res) =>{
   console.log(req.sessionID);
   u_name = req.body.username
   p_word = req.body.password
-  console.log(u_name, p_word)
   var sql = {text: 'SELECT * FROM u_info where u_name = $1 and p_word = $2;', values: [u_name, p_word]}
   var logger = await client.query(sql)
   if (logger == undefined){
-    console.log('No entry of that username or password')
     res.sendFile('login.html', {root: __dirname })
   }
   else if (logger != undefined){
