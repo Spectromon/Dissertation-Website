@@ -72,7 +72,7 @@ app.get('/rubick', (req, res) => {
   if (err) throw err;
   if (session) console.log(session);
 })
-  console.log(sessioncheck)
+  
   res.sendFile('rubick.html', {root: __dirname })
 });
 
