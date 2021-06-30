@@ -68,6 +68,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/rubick', (req, res) => {
+  console.log(req.sessionID);
   store.get(req.sessionID, (err, session) =>{
   if (err) throw err;
   else if (session != undefined && session != null) {
