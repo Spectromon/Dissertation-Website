@@ -77,6 +77,19 @@ app.get('/rubick', (req, res) => {
   })
 });
 
+app.post('/rubick', (req, res) => {
+  store.get(req.sessionID, (err, session) =>{
+    if (err) throw err;
+    else if (session != undefined && session != null) {
+      console.log('The session was found')
+      res.status(200).end();
+                 }
+     else{ 
+       console.log('no session found')
+       res.redirect('/login')}; 
+    })
+});
+
 
 
 //This works. Requires urlencodedParser however does send an email to the specific inputted email address.
