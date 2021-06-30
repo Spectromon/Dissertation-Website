@@ -144,6 +144,12 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                             req.session.regenerate(function(err) {
                               if (err) throw err;
                               console.log(req.sessionID)
+                              req.session.authenticated = true;
+                              req.session.user = {u_name};
+                              store.set(req.sessionID, session, (err) =>{
+                                if (err) console.log(err)
+                              })
+                              res.redirect('/rubick')
                              })
                           }                          
                         }
