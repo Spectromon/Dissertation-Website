@@ -106,10 +106,8 @@ app.post('/login', urlencodedParser, async (req,res) =>{
     res.sendFile('login.html', {root: __dirname })
   }
   else if (logger != undefined){
-    console.log (logger)
       if (logger.rows.length != 0){
         login = logger.rows[0]
-        console.log(login)
         if (login.u_name == u_name && login.p_word == p_word){
           res.redirect('/rubick')
         }
