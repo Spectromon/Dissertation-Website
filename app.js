@@ -141,6 +141,12 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                           if(session.user.u_name == u_name){
                             store.destroy(session, (err) =>{if (err) throw err})
                             req.session.destroy()
+                            req.session.authenticated = true;
+                            req.session.user = {u_name};
+                            store.set(req.sessionID, session, (err) =>{
+                              if (err) console.log(err)
+                            })
+                            res.redirect('/rubick')
                             console.log('A session should have been deleted')
                           }                          
                         }
