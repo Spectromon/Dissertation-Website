@@ -63,7 +63,7 @@ app.get('/', (req, res) => {
       res.redirect('/rubick')}
     else{ 
       console.log('no session found')
-      res.sendFile('signup.html', {root: __dirname })}
+      res.sendFile('index.html', {root: __dirname })}
   })
 });
 
