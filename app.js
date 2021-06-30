@@ -70,7 +70,7 @@ app.get('/login', (req, res) => {
 app.get('/rubick', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
   if (err) throw err;
-  if (session) console.log(session);
+  if (session) console.log(session.user);
 })
   
   res.sendFile('rubick.html', {root: __dirname })
