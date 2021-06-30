@@ -119,7 +119,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
           store.all(err, sessions =>{
             if (err){console.log(err)}
             console.log(sessions)
-          }
+          })
           req.session.authenticated = true;
           req.session.user = {u_name};
           store.set(req.sessionID, session, (err) =>{
