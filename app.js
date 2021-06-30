@@ -122,7 +122,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
               if (sessions.length !=0){
                 for(let session in sessions){
                   console.log(u_name)
-                  console.log(session.username)
+                  console.log(session.user)
 //                   if (u_name == session.username[0]){
 //                     console.log(u_name + " is already present in the session store. A new one must be given")
 //                   }
