@@ -134,16 +134,16 @@ app.post('/login', urlencodedParser, async (req,res) =>{
             if (err) console.log(err)
             else if (sessions) {
               if (sessions.length !=0){
-                for(let session in sessions){
-                  store.get(session, (err, session) =>{
+                for(let sesh in sessions){
+                  store.get(sesh, (err, s) =>{
                         if (err) throw err;
-                        else if (session != undefined && session != null) {
-                          if(session.user.u_name == u_name){
-                            console.log(session)
-                            store.destroy(session, (err) =>{if (err) throw err})
+                        else if (s != undefined && s != null) {
+                          if(s.user.u_name == u_name){
+                            console.log(s)
+                            store.destroy(s, (err) =>{if (err) throw err})
                             req.session.regenerate(function(err) {
                               if (err) throw err;
-                              console.log(session)
+                              console.log(s)
                              })
                           }                          
                         }
