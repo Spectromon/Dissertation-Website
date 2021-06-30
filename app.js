@@ -143,7 +143,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                             store.destroy(s, (err) =>{if (err) throw err})
                             req.session.regenerate(function(err) {
                               if (err) throw err;
-                              console.log(s)
+                              console.log(req.sessionID)
                              })
                           }                          
                         }
