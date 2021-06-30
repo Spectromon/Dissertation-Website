@@ -143,16 +143,15 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                             console.log(s)
                             store.destroy(s, (err) =>{if (err) throw err})
                             req.session.regenerate(function(err) {
-                              if (err) throw err;
-                              console.log(req.sessionID)                               
-                              req.session.authenticated = true;
-                              req.session.user = {u_name};
-                              store.set(req.sessionID, session, (err) =>{
-                                if (err) console.log(err)
-                              })
-                              req.session.reload((err)=>{if (err) throw err});
-                              res.redirect('/rubick')
+                              if (err) throw err;})
+                            console.log(req.sessionID)                               
+                            req.session.authenticated = true;
+                            req.session.user = {u_name};
+                            store.set(req.sessionID, session, (err) =>{
+                              if (err) console.log(err)
                              })
+                            console.log(store)
+                            res.redirect('/rubick')
                           }                          
                         }
                       })
