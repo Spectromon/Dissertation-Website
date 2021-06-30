@@ -268,7 +268,8 @@ input[type=text], input[type=password] {
     background-color: white;
     color: #005EB8;
     transition: all 0.5s ease;
-    border-width: 0 0 2px 0 !important;
+    border: 2px solid #005EB8;
+    border-width: 2px !important;
     cursor: pointer !important;
     /* border: 2px solid rgb(0,	94, 184) !important; */
     padding: 14px 30px 12px 30px !important;
@@ -280,6 +281,7 @@ input[type=text], input[type=password] {
 
 .submitlogin:hover {
     background-color: #003087;
+    border: 2px solid #003087;
     color: white;
     padding: 14px 30px 12px 30px !important;
 
