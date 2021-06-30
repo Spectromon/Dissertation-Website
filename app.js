@@ -158,29 +158,38 @@ app.post('/login', urlencodedParser, async (req,res) =>{
           
           store.all((err, sessions) =>{
             if (err) console.log(err)
+            
             else if (sessions) {
               if (sessions.length !=0){
                 for(let sesh in sessions){
                   store.get(sesh, (err, s) =>{
-                        if (err) throw err;
-                        else if (s != undefined && s != null) {
-                          if(s.user.u_name == u_name){
+                    if (err) throw err;
+                    else if (s != undefined && s != null) {
+                        if(s.user.u_name == u_name){
                             res.redirect('/rubick')
-                          }                          
                         }
-                      })
-                  }
-               }
-              else if (sessions.length == 0){ pass }
+                        else{
+                          req.session.authenticated = true;
+                          req.session.user = {u_name};
+                          store.set(req.sessionID, session, (err) =>{
+                            if (err) console.log(err)
+                          })
+                          res.redirect('/rubick')
+                        }                          
+                      }
+                  })
+                }
+              }
+              else if (sessions.length == 0){
+                req.session.authenticated = true;
+                req.session.user = {u_name};
+                store.set(req.sessionID, session, (err) =>{
+                  if (err) console.log(err)
+                })
+                res.redirect('/rubick')
+              }
             }
           })
-          
-          req.session.authenticated = true;
-          req.session.user = {u_name};
-          store.set(req.sessionID, session, (err) =>{
-            if (err) console.log(err)
-          })
-          res.redirect('/rubick')
         }
         else{
           res.redirect('/signup')
