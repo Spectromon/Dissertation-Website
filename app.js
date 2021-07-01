@@ -103,6 +103,7 @@ app.get('/login', (req, res) => {
 app.get('/logout', (req, res) => {
   store.destroy(req.sessionID, (err) => { if (err) throw err;})
   req.session.destroy( (err) => {if (err) throw err});
+  console.log('The session should be deleted')
   res.redirect('/')
 });
 
