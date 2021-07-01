@@ -131,8 +131,11 @@ app.post('/rubick', (req, res) => {
 
 app.post('/submission', urlencodedParser, (req, res) => {
   username = req.session.user
-  console.log(req.body)
+  g_name = req.body.g_name
+  score = req.body.score
+  console.log(username, g_name, score)
 });
+
 
 
 //This works. Requires urlencodedParser however does send an email to the specific inputted email address.
