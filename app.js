@@ -134,7 +134,7 @@ app.post('/submission', urlencodedParser, (req, res) => {
   g_name = req.body.game
   score = req.body.score
   console.log(username, g_name, score)
-  var sql = {text: 'INSERT INTO g_info(u_name, g_name, score) VALUES($1 $2 $3);', values: [u_name, g_name, score]}
+  var sql = {text: 'INSERT INTO g_info(u_name, g_name, score) VALUES($1, $2, $3);', values: [u_name, g_name, score]}
   client.query(sql, (err, res) => {
     if (err){
       console.log(err)
