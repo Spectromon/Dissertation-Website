@@ -221,6 +221,30 @@ function changeColour(square){
     }
     gameChecker()
     document.getElementById("moves").innerHTML = "Moves: " + totalmoves;
+    
+    $(document).ready(function(){
+        $.ajax({
+          global: false,
+          type: 'POST',
+          url: "/submission",
+          dataType: 'html',
+          data: {
+              score: totalmoves,
+              game: "Rubick"
+          },
+          success: function (result) {
+              console.log('Score Submitted');
+          },
+          error: function (request, status, error) {
+              serviceError();
+          }
+      });
+    });
+        
+        
+        
+        
+        
     }
 
 }
