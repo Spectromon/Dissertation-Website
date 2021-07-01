@@ -221,25 +221,6 @@ function changeColour(square){
     }
     gameChecker()
     document.getElementById("moves").innerHTML = "Moves: " + totalmoves;
-    
-    $(document).ready(function(){
-        $.ajax({
-          global: false,
-          type: 'POST',
-          url: "/submission",
-          dataType: 'html',
-          data: {
-              score: totalmoves,
-              game: "Rubick"
-          },
-          success: function (result) {
-              console.log('Score Submitted');
-          },
-          error: function (request, status, error) {
-              serviceError();
-          }
-      });
-    });
         
         
         
@@ -300,8 +281,27 @@ function colourChecker(){
 function gameChecker(){
     if (correctsquares.includes("tile") && correctsquares.includes("tile2") && correctsquares.includes("tile3") && correctsquares.includes("tile4") && correctsquares.includes("tile5") && correctsquares.includes("tile6") && correctsquares.includes("tile7") && correctsquares.includes("tile8") && correctsquares.includes("tile9") ){
       winner = true;
+      $(document).ready(function(){
+        $.ajax({
+          global: false,
+          type: 'POST',
+          url: "/submission",
+          dataType: 'html',
+          data: {
+              score: totalmoves,
+              game: "Rubick"
+          },
+          success: function (result) {
+              console.log('Score Submitted');
+          },
+          error: function (request, status, error) {
+              serviceError();
+          }
+      });
+    });
       document.getElementById("Winner").innerHTML = "Well done, you have solved the puzzle in " + totalmoves + " moves. Reset the game to try again";
       document.getElementById("Winner").style.marginRight = "-300px";
+      
   }
 }
 
