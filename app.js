@@ -66,6 +66,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/gamehub', (req, res) => {
+  console.log(store)
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
     else if (session != undefined && session != null) {
@@ -98,6 +99,11 @@ app.get('/login', (req, res) => {
        res.sendFile('login.html', {root: __dirname })}
     })
 });
+
+app.get('/logout', (req, res) => {
+  console.log('funny monkey')
+});
+
 
 app.get('/rubick', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
@@ -169,7 +175,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                         if (err) throw err;
                         else if (s != undefined && s != null) {
                           if(s.user.u_name == u_name){
-                            res.redirect('/rubick')
+                            res.redirect('/gamehub')
                           }                          
                         }
                       })
