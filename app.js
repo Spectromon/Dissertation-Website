@@ -177,7 +177,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                         else if (s != undefined && s != null) {
                           if(s.user.u_name == u_name){
                             console.log('Session for this user already exists!')
-                            console.log(s)
+                            console.log(sesh)
                             store.destroy((sID,err) => { if (err) throw err;})
                             // req.session.regenerate((err) => {
                             //   console.log(store)
