@@ -166,31 +166,40 @@ app.post('/login', urlencodedParser, async (req,res) =>{
         login = logger.rows[0]
         if (login.u_name == u_name && login.p_word == p_word){
           
-//           store.all((err, sessions) =>{
-//             if (err) console.log(err)
-//             else if (sessions) {
-//               if (sessions.length !=0){
-//                 for(let sesh in sessions){
-//                   store.get(sesh, (err, s) =>{
-//                         if (err) throw err;
-//                         else if (s != undefined && s != null) {
-//                           if(s.user.u_name == u_name){
-//                             res.redirect('/gamehub')
-//                           }                          
-//                         }
-//                       })
-//                   }
-//                }
-//               else if (sessions.length == 0){ pass }
-//             }
-//           })
-          
-          req.session.authenticated = true;
-          req.session.user = {u_name};
-          store.set(req.sessionID, session, (err) =>{
+          store.all((err, sessions) =>{
             if (err) console.log(err)
+            else if (sessions) {
+              if (sessions.length !=0){
+                sessionactive = false
+                for(let sesh in sessions){
+                  store.get(sesh, (err, s) =>{
+                        if (err) throw err;
+                        else if (s != undefined && s != null) {
+                          if(s.user.u_name == u_name){
+                            sessionactive = true
+                          }                          
+                        }
+                      })
+                  }
+                console.log(sessionactive)
+                req.session.authenticated = true;
+                req.session.user = {u_name};
+                store.set(req.sessionID, session, (err) =>{
+                  if (err) console.log(err)
+                })
+                res.redirect('/gamehub')
+
+               }
+              else if (sessions.length == 0){
+                req.session.authenticated = true;
+                req.session.user = {u_name};
+                store.set(req.sessionID, session, (err) =>{
+                  if (err) console.log(err)
+                })
+                res.redirect('/gamehub')
+              }
+            }
           })
-          res.redirect('/gamehub')
         }
         else{
           res.redirect('/signup')
