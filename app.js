@@ -176,7 +176,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                         if (err) throw err;
                         else if (s != undefined && s != null) {
                           if(s.user.u_name == u_name){
-                            sessionactive = true
+                            return sessionactive = true
                           }                          
                         }
                       })
