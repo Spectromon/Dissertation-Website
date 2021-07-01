@@ -131,7 +131,7 @@ app.post('/rubick', (req, res) => {
 
 app.post('/submission', (req, res) => {
   username = req.session.user
-  console.log(req)
+  console.log(req.body)
 });
 
 
