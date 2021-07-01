@@ -55,16 +55,16 @@ charactersLength));
   
 // Getting Request
 app.get('/', (req, res) => {
-  console.log('index.html loading')
-  store.get(req.sessionID, (err, session) =>{
-    if (err) throw err;
-    else if (session != undefined && session != null) {
-      console.log('The session was found')
-      res.redirect('/rubick')}
-    else{ 
-      console.log('no session found')
-      res.sendFile('index.html', {root: __dirname })}
-  })
+  console.log('index')
+//   store.get(req.sessionID, (err, session) =>{
+//     if (err) throw err;
+//     else if (session != undefined && session != null) {
+//       console.log('The session was found')
+//       res.redirect('/rubick')}
+//     else{ 
+//       console.log('no session found')
+//       res.sendFile('index.html', {root: __dirname })}
+//   })
 });
 
 app.get('/signup', (req, res) => {
