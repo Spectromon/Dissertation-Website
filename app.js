@@ -56,15 +56,15 @@ charactersLength));
 // Getting Request
 app.get('/', (req, res) => {
   console.log('index')
-//   store.get(req.sessionID, (err, session) =>{
-//     if (err) throw err;
-//     else if (session != undefined && session != null) {
-//       console.log('The session was found')
-//       res.redirect('/rubick')}
-//     else{ 
-//       console.log('no session found')
-//       res.sendFile('index.html', {root: __dirname })}
-//   })
+  store.get(req.sessionID, (err, session) =>{
+    if (err) throw err;
+    else if (session != undefined && session != null) {
+      console.log('The session was found')
+      res.redirect('/rubick')} //change this to the html of the game selection screen (containing logout button).
+    else{ 
+      console.log('no session found')
+      res.sendFile('main.html', {root: __dirname })} //requires main, elsewise heroku constnatly pushes index.html.
+  })
 });
 
 // app.get('/signup', (req, res) => {
