@@ -184,7 +184,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
           store.set(req.sessionID, session, (err) =>{
             if (err) console.log(err)
           })
-          res.redirect('/rubick')
+          res.redirect('/gamehub')
         }
         else{
           res.redirect('/signup')
