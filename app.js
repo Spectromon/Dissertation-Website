@@ -58,10 +58,19 @@ app.get('/', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
     else if (session != undefined && session != null) {
-      res.sendFile('games.html', {root: __dirname })} //change this to the html of the game selection screen (containing logout button).
+      res.redirect('gamehub')//change this to the html of the game selection screen (containing logout button).
     else{ 
       res.sendFile('main.html', {root: __dirname })} //requires main, elsewise heroku constnatly pushes index.html.
   })
+});
+app.get('/gamehub', (req, res) =>{
+  store.get(req.sessionID, (err, session) =>{
+    if (err) throw err;
+    else if (session != undefined && session != null) {
+      res.sendFile('games.html', {root: __dirname })}//change this to the html of the game selection screen (containing logout button).
+    else{ 
+      res.redirect('/login')//requires main, elsewise heroku constnatly pushes index.html.
+    }
 });
 
 app.get('/signup', (req, res) => {
