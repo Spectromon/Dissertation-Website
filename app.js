@@ -133,7 +133,6 @@ app.post('/submission', urlencodedParser, (req, res) => {
   username = req.session.user
   g_name = req.body.game
   score = req.body.score
-  console.log(username, g_name, score)
   var sql = {text: 'INSERT INTO g_info(u_name, g_name, score) VALUES($1, $2, $3);', values: [u_name, g_name, score]}
   client.query(sql, (err, res) => {
     if (err){
@@ -194,17 +193,7 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                             console.log('Session for this user already exists!')
                             console.log(sesh)
                             store.destroy(sesh, (err) => { if (err) throw err;})
-                            // req.session.regenerate((err) => {
-                            //   console.log(store)
-                            //   console.log(req.sessionID)
-                            //   if (err){throw err}
-                            //   req.session.authenticated = true;
-                            //   req.session.user = {u_name};
-                            //   store.set(req.sessionID, session, (err) =>{
-                            //     if (err) console.log(err)
-                            //   })
-                            //   res.redirect('/gamehub')
-                            // })
+                            
                           }                          
                         }
                       })
