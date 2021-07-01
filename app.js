@@ -101,7 +101,8 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/logout', (req, res) => {
-  console.log('funny monkey')
+  store.destroy(req.sessionID, (err) => { if (err) throw err;})
+  req.session.destroy( (err) => {if (err) throw err});
 });
 
 
