@@ -129,7 +129,7 @@ app.post('/rubick', (req, res) => {
     })
 });
 
-app.post('/submission', (req, res) => {
+app.post('/submission', urlencodedParser, (req, res) => {
   username = req.session.user
   console.log(req.body)
 });
