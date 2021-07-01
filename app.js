@@ -178,16 +178,16 @@ app.post('/login', urlencodedParser, async (req,res) =>{
                           if(s.user.u_name == u_name){
                             console.log('Session for this user already exists!')
                             store.destroy((s,err) => { if (err) throw err;})
-                            req.session.regenerate((err) => {
-                              console.log(store)
-                              console.log(req.sessionID)
-                              if (err){throw err}
-                              req.session.authenticated = true;
-                              req.session.user = {u_name};
-                              store.set(req.sessionID, session, (err) =>{
-                                if (err) console.log(err)
-                              })
-                              res.redirect('/gamehub')
+//                             req.session.regenerate((err) => {
+//                               console.log(store)
+//                               console.log(req.sessionID)
+//                               if (err){throw err}
+//                               req.session.authenticated = true;
+//                               req.session.user = {u_name};
+//                               store.set(req.sessionID, session, (err) =>{
+//                                 if (err) console.log(err)
+//                               })
+//                               res.redirect('/gamehub')
                             })
                           }                          
                         }
