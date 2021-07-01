@@ -131,11 +131,7 @@ app.post('/rubick', (req, res) => {
 
 app.post('/submission', (req, res) => {
   username = req.session.user
-  console.log(username)
-  data = req.data
-  g_name = req.data.g_name
-  score = req.data.score
-  console.log(g_name, score)
+  console.log(req)
 });
 
 
