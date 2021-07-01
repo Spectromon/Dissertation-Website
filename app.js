@@ -67,41 +67,41 @@ app.get('/', (req, res) => {
 //   })
 });
 
-app.get('/signup', (req, res) => {
-  store.get(req.sessionID, (err, session) =>{
-    if (err) throw err;
-    else if (session != undefined && session != null) {
-      console.log('The session was found')
-      res.redirect('/rubick')}
-     else{ 
-       console.log('no session found')
-       res.sendFile('signup.html', {root: __dirname })}
-    })
-});
+// app.get('/signup', (req, res) => {
+//   store.get(req.sessionID, (err, session) =>{
+//     if (err) throw err;
+//     else if (session != undefined && session != null) {
+//       console.log('The session was found')
+//       res.redirect('/rubick')}
+//      else{ 
+//        console.log('no session found')
+//        res.sendFile('signup.html', {root: __dirname })}
+//     })
+// });
 
 
-app.get('/login', (req, res) => {
-  store.get(req.sessionID, (err, session) =>{
-    if (err) throw err;
-    else if (session != undefined && session != null) {
-      console.log('The session was found')
-      res.redirect('/rubick')}                 
-     else{ 
-       console.log('no session found')
-       res.sendFile('login.html', {root: __dirname })}
-    })
-});
+// app.get('/login', (req, res) => {
+//   store.get(req.sessionID, (err, session) =>{
+//     if (err) throw err;
+//     else if (session != undefined && session != null) {
+//       console.log('The session was found')
+//       res.redirect('/rubick')}                 
+//      else{ 
+//        console.log('no session found')
+//        res.sendFile('login.html', {root: __dirname })}
+//     })
+// });
 
-app.get('/rubick', (req, res) => {
-  console.log(req.sessionID);
-  store.get(req.sessionID, (err, session) =>{
-  if (err) throw err;
-  else if (session != undefined && session != null) {
-    res.sendFile('rubick.html', {root: __dirname })
-               }
-   else{ res.redirect('/login')}; 
-  })
-});
+// app.get('/rubick', (req, res) => {
+//   console.log(req.sessionID);
+//   store.get(req.sessionID, (err, session) =>{
+//   if (err) throw err;
+//   else if (session != undefined && session != null) {
+//     res.sendFile('rubick.html', {root: __dirname })
+//                }
+//    else{ res.redirect('/login')}; 
+//   })
+// });
 
 app.post('/rubick', (req, res) => {
   console.log(req.sessionID)
