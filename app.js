@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
     else if (session != undefined && session != null) {
-      res.redirect('/rubick')} //change this to the html of the game selection screen (containing logout button).
+      res.sendFile('game.html', {root: __dirname })} //change this to the html of the game selection screen (containing logout button).
     else{ 
       res.sendFile('main.html', {root: __dirname })} //requires main, elsewise heroku constnatly pushes index.html.
   })
@@ -68,10 +68,9 @@ app.get('/signup', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
     else if (session != undefined && session != null) {
-      console.log('The session was found')
-      res.redirect('/rubick')}
-     else{ 
-       console.log('no session found')
+      
+      res.redirect('/')}
+     else{
        res.sendFile('signup.html', {root: __dirname })}
     })
 });
@@ -81,9 +80,8 @@ app.get('/login', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
     else if (session != undefined && session != null) {
-      res.redirect('/rubick')}                 
-     else{ 
-       console.log('no session found')
+      res.redirect('/')}                 
+     else{
        res.sendFile('login.html', {root: __dirname })}
     })
 });
@@ -103,11 +101,9 @@ app.post('/rubick', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
     else if (session != undefined && session != null) {
-      console.log('The session was found')
       res.sendFile('rubick.html', {root: __dirname })
                  }
      else{ 
-       console.log('no session found')
        res.redirect('/login')}; 
     })
 });
