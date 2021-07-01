@@ -131,7 +131,7 @@ app.post('/rubick', (req, res) => {
 
 app.post('/submission', urlencodedParser, (req, res) => {
   username = req.session.user
-  g_name = req.body.g_name
+  g_name = req.body.game
   score = req.body.score
   console.log(username, g_name, score)
 });
