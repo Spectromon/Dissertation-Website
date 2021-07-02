@@ -189,6 +189,7 @@ var sql = {text: 'INSERT INTO e_info(u_name, gazex, gazey, headx, heady, headz, 
     };
 //     else{console.log('Eye Tracking Registered')}
   });
+res.end();
 })
 
 
