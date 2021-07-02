@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
   }
 
+html, body{
+    height: 100%;
+}
+
 body::-webkit-scrollbar {
     cursor: pointer;
     width: 20px;
@@ -31,7 +35,6 @@ body{
     overflow: overlay;
     scrollbar-width: thin;
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-    height: 700px;
     margin-left: 0;
     background: linear-gradient(180deg, #0072CE 0, #003087 100%);
     /* background: linear-gradient(180deg, #000000 0, #000000 25%, #2cb5e8 75%);  */
@@ -326,10 +329,10 @@ input:focus{
     background-color: transparent;
     width: 100vw !important;
     display: flex;
-    margin-top: 250px;
     align-content: center !important;
 }
 .internalgamezone{
+    margin-top: 250px;
     align-content: center !important;
     display: flex !important;
 }
