@@ -292,7 +292,7 @@ function gameChecker(){
               game: "Rubick"
           },
           success: function (result) {
-              console.log('Score Submitted');
+              pass
           },
           error: function (request, status, error) {
               serviceError();
