@@ -42,6 +42,7 @@ function PlotGaze(GazeData) {
                            Yaw: GazeData.HeadYaw,
                            Pitch: GazeData.HeadPitch,
                            Roll: GazeData.HeadRoll,
+                           Game: 'Rubick',
                        },
                        success: function (result) {
                            console.log('Eyetracking Submitted');
