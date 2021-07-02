@@ -131,8 +131,11 @@ app.post('/rubick', (req, res) => {
 
 app.post('/submission', urlencodedParser, (req, res) => {
   username = req.session.user
+  console.log(username)
   g_name = req.body.game
+  console.log(g_name)
   score = req.body.score
+  console.log(score)
   var sql = {text: 'INSERT INTO g_info(u_name, g_name, score) VALUES($1, $2, $3);', values: [username, g_name, score]}
   client.query(sql, (err, res) => {
     if (err){
