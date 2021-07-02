@@ -186,7 +186,7 @@ var sql = {text: 'INSERT INTO e_info(u_name, gazex, gazey, headx, heady, headz, 
     if (err){
       console.log(err)
     };
-    else{console.log('Success')}
+    else{console.log('Eye Tracking Registered')}
   });
 })
 
