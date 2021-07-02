@@ -142,8 +142,7 @@ app.post('/submission', urlencodedParser, (req, res) => {
 });
 
 app.post("/eyetracking", urlencodedParser, async (req,res) =>{
-  fs = require('fs')
-  var u_name = req.session.user
+  var u_name = req.session.user.u_name
   var GazeX = req.body.GazeX
   var GazeY = req.body.GazeY
   var HeadX = req.body.HeadX
