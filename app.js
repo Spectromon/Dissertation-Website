@@ -130,7 +130,7 @@ app.post('/rubick', (req, res) => {
 });
 
 app.post('/submission', urlencodedParser, (req, res) => {
-  username = req.session.user
+  username = req.session.user.u_name
   console.log(username)
   g_name = req.body.game
   console.log(g_name)
