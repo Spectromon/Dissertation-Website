@@ -141,6 +141,54 @@ app.post('/submission', urlencodedParser, (req, res) => {
   });
 });
 
+app.post("/eyetracking", urlencodedParser, async (req,res) =>{
+  fs = require('fs')
+  var u_name = req.session.user
+  var GazeX = req.body.GazeX
+  var GazeY = req.body.GazeY
+  var HeadX = req.body.HeadX
+  var HeadY = req.body.HeadY
+  var HeadZ = req.body.HeadZ
+  var Yaw = req.body.Yaw
+  var Pitch = req.body.Pitch
+  var Roll = req.body.Roll
+  var Game = req.body.Game
+  
+  console.log('Username: ' + u_name + ', GazeX :' + GazeX + ', GazeY :' + GazeY + ', HeadX :' + HeadX + ', HeadY :' + HeadY + ', HeadZ :' + HeadZ + ', Yaw :' + Yaw + ', Pitch :' + Pitch + ', Roll :' + Roll)
+
+  //These are changed within the server itself and not taken from the HTML form
+let date_ob = new Date();
+
+// current date
+// adjust 0 before single digit date
+let date = ("0" + date_ob.getDate()).slice(-2);
+
+// current month
+let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+
+// current year
+let year = date_ob.getFullYear();
+
+// current hours
+let hours = date_ob.getHours();
+
+// current minutes
+let minutes = date_ob.getMinutes();
+
+// current seconds
+let seconds = date_ob.getSeconds();
+
+var DateTime = (year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
+
+console.log('Username: ' + u_name + ', GazeX :' + GazeX + ', GazeY :' + GazeY + ', HeadX :' + HeadX + ', HeadY :' + HeadY + ', HeadZ :' + HeadZ + ', Yaw :' + Yaw + ', Pitch :' + Pitch + ', Roll :' + Roll + ', DateTime: ' + DateTime + ', Game:' + Game)
+var sql = {text: 'INSERT INTO e_info(u_name, gazex, gazey, headx, heady, headz, yaw, pitch, roll, datetime, game) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);', values: [u_name, GazeX, GazeY, HeadX, HeadY, HeadZ, Yaw, Pitch, Roll, DateTime, Game]}
+  client.query(sql, (err, res) => {
+    if (err){
+      console.log(err)
+    }
+    else{console.log('Success')}
+  });
+})
 
 
 //This works. Requires urlencodedParser however does send an email to the specific inputted email address.
