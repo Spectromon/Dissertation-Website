@@ -106,6 +106,15 @@ app.get('/logout', (req, res) => {
   res.redirect('/')
 });
 
+app.get('/dotsandboxes', (req, res) => {
+  store.get(req.sessionID, (err, session) =>{
+  if (err) throw err;
+  else if (session != undefined && session != null) {
+    res.sendFile('dotsandboxes.html', {root: __dirname })
+               }
+   else{ res.redirect('/login')}; 
+  })
+});
 
 app.get('/rubick', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
