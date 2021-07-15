@@ -159,7 +159,6 @@ app.post('/submission', urlencodedParser, async (req, res) => {
       console.log(err)
     }
     else{console.log('Score Submitted')}
-  res.end();
   });
 });
 
