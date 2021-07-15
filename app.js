@@ -160,6 +160,7 @@ app.post('/submission', urlencodedParser, async (req, res) => {
     }
     else{console.log('Score Submitted')}
   });
+  res.end();
 });
 
 app.post("/eyetracking", urlencodedParser, async (req,res) =>{
