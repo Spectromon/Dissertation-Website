@@ -126,6 +126,16 @@ app.get('/rubick', (req, res) => {
   })
 });
 
+app.get('/asteroids', (req, res) => {
+  store.get(req.sessionID, (err, session) =>{
+  if (err) throw err;
+  else if (session != undefined && session != null) {
+    res.sendFile('asteroids.html', {root: __dirname })
+               }
+   else{ res.redirect('/login')}; 
+  })
+});
+
 app.post('/rubick', (req, res) => {
   console.log(req.sessionID)
   store.get(req.sessionID, (err, session) =>{
