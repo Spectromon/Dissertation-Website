@@ -279,7 +279,7 @@ function animate(keys){
                       console.log('Score Submitted');
                   },
                   error: function (request, status, error) {
-                      serviceError();
+                      console.log(error);
                   }
               });
             });
