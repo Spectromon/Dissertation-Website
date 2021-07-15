@@ -272,7 +272,7 @@ function animate(keys){
                   url: "/submission",
                   dataType: 'html',
                   data: {
-                      score: totalmoves,
+                      score: score,
                       game: "Asteroids"
                   },
                   success: function (result) {
