@@ -266,23 +266,23 @@ function animate(keys){
           scoretext.innerHTML = "GAME OVER  <br/> Score: " + score
           total_score.innerHTML = ''
           $(document).ready(function(){
-                $.ajax({
-                  global: false,
-                  type: 'POST',
-                  url: "/submission",
-                  dataType: 'html',
-                  data: {
-                      score: score,
-                      game: "Asteroids"
-                  },
-                  success: function (result) {
-                      console.log('Score Submitted');
-                  },
-                  error: function (request, status, error) {
-                      console.log(error);
-                  }
-              });
-            });
+            $.ajax({
+              global: false,
+              type: 'POST',
+              url: "/submission",
+              dataType: 'html',
+              data: {
+                  score: totalmoves,
+                  game: "Asteroids"
+              },
+              success: function (result) {
+                  console.log('Score Submitted');
+              },
+              error: function (request, status, error) {
+                  serviceError();
+              }
+          });
+        });
         }
 
       projectiles.forEach((projectile, projectileidx) => {
