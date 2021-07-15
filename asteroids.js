@@ -273,7 +273,7 @@ function animate(keys){
                   dataType: 'html',
                   data: {
                       score: totalmoves,
-                      game: "Rubick"
+                      game: "Asteroids"
                   },
                   success: function (result) {
                       console.log('Score Submitted');
