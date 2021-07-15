@@ -213,8 +213,8 @@ function animate(){
               url: "/submission",
               dataType: 'html',
               data: {
-                  score: totalmoves,
-                  game: "Asteroids"
+                  score: score,
+                  game: "Snake"
               },
               success: function (result) {
                   console.log('Score Submitted');
