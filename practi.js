@@ -276,7 +276,6 @@ function colourChecker(){
             }
         }
     }
-    console.log(correctsquares)
 }
 function gameChecker(){
     if (correctsquares.includes("tile") && correctsquares.includes("tile2") && correctsquares.includes("tile3") && correctsquares.includes("tile4") && correctsquares.includes("tile5") && correctsquares.includes("tile6") && correctsquares.includes("tile7") && correctsquares.includes("tile8") && correctsquares.includes("tile9") ){
@@ -292,7 +291,7 @@ function gameChecker(){
               game: "Rubick"
           },
           success: function (result) {
-              pass
+              console.log('Score Submitted')
           },
           error: function (request, status, error) {
               serviceError();
