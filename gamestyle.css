@@ -199,6 +199,8 @@ body{
 }
 
 .left-top{
+cursor: pointer;
+    transition: .3s;
     display: flex !important;
     align-items: center !important;
     align-content: center !important;
@@ -206,10 +208,17 @@ body{
     justify-content: flex-start !important;
     flex: 0 0 33%;
     max-width: 33%;
-    background-color: green;
-    border: 2px solid green;
-    border-radius: 55px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 55px
 
+}
+
+.left-top:hover{
+    transition: .3s;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 55px
 }
 .center-top{
     display: flex !important;
