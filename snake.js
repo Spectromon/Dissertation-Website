@@ -334,6 +334,7 @@ document.body.addEventListener("keydown", function(e) {
     if (e.keyCode == 40){
         direction = 'Down'
     }
+    e.preventDefault();
   });
 
 function reset(){
