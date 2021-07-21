@@ -273,12 +273,32 @@
         if (is_player_human(curPlayer)) {
           action = parseInt(this.getAttribute('data-index'));
           play(action);
+          console.log(action, s, 'dotsandboxes', 'Time') //This should be where info is sent.
         }
       }
 
       function play(action) {
         if (is_valid(action)) {
+          a = new Array(24).fill(0);
+          a.forEach((act, aidx) =>{
+            validactions.forEach(validaction =>{
+              if (parseInt(aidx) == parseInt(validaction)){
+                a[aidx] = 1
+              }
+            })
+          })
+          s = a.join() //Done this way to ensure that information sent is the Player Move in response to board state, rather than board state after playermove.
+          validity = false
+          validactions.forEach((validaction, validindex) =>{
+            if (action == validaction){
+              validity = true
+            }
+          })
+          if (validity === false){
+            validactions.push(action)
+          }
           actions.push(action);
+          //Action takes all, no matter if they are valid or not. THerefore, require check to ensure that action is not in action before taking, as unsure if changing action affects play.
           paint_line(curPlayer, action);
           [board, curPlayer, up, down, left, right] = game.getNextState(board, curPlayer, action);
           color_square(curPlayer == 1 ? player2_color_light : player1_color_light, action, up, down, left, right);
