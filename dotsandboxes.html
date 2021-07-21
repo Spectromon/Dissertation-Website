@@ -273,25 +273,7 @@
         if (is_player_human(curPlayer)) {
           action = parseInt(this.getAttribute('data-index'));
           play(action);
-          $(document).ready(function(){
-                     $.ajax({
-                       global: false,
-                       type: 'POST',
-                       url: "/machinelearning",
-                       dataType: 'html',
-                       data: {
-                           PlayerMove: action,
-                           BoardState: s,
-                           Game: 'dotsandboxes',
-                       },
-                       success: function (result) {
-                           console.log('MachineLearning Info Submitted');
-                       },
-                       error: function (request, status, error) {
-                           serviceError();
-                       }
-                   });
-                 });
+          console.log(action, s, 'dotsandboxes', 'Time') //This should be where info is sent.
         }
       }
 
