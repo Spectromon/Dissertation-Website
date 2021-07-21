@@ -140,6 +140,10 @@
 
       const SKIP_ACTION = game.getActionSize() - 1;
       let actions = [];
+      let validactions = [];
+      validity = false
+      let a
+      let s
 
       // Load the Neural Network
       tf.loadLayersModel(`model-n${n}/model.json`).then(function(neural_network) {
