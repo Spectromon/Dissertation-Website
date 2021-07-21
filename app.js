@@ -157,6 +157,46 @@ app.post('/rubick', (req, res) => {
     })
 });
 
+app.post('/machinelearning', urlencodedParser, async (req, res) => {
+  u_name = req.session.user.u_name
+  g_name = req.body.Game
+  p_move = req.body.PlayerMove
+  board_state = req.body.BoardState
+
+
+  console.log(u_name, g_name, p_move, board_state)
+
+  let date_ob = new Date();
+
+  // current date
+  // adjust 0 before single digit date
+  let date = ("0" + date_ob.getDate()).slice(-2);
+
+  // current month
+  let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+
+  // current year
+  let year = date_ob.getFullYear();
+
+  // current hours
+  let hours = date_ob.getHours();
+
+  // current minutes
+  let minutes = date_ob.getMinutes();
+
+  // current seconds
+  let seconds = date_ob.getSeconds();
+
+  var DateTime = (year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
+
+  var sql = {text: 'INSERT INTO ml_info(u_name, move, board_state, g_name, datetime) VALUES($1, $2, $3, $4, $5);', values: [u_name, p_move, board_state, g_name, DateTime]}
+  client.query(sql, (err, res) => {
+    if (err){
+      console.log(err)
+    };
+  });
+})
+
 app.post('/submission', urlencodedParser, async (req, res) => {
   username = req.session.user.u_name
   g_name = req.body.game
