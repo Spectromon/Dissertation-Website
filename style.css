@@ -46,6 +46,7 @@ body{
     background: transparent;
     transition:all 0.5s ease;
     width: 100vw !important;
+    display:block;
     position: fixed !important;
     top: 0px !important;
     z-index: 1 !important;
