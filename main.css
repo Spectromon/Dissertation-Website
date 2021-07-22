@@ -6,7 +6,8 @@ body {
 }
 
 .container{
-  margin-top: 150px;
+  display:inline;
+  background: white;
 }
 
 .score {
