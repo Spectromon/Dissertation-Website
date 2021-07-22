@@ -3,6 +3,10 @@ body {
   font-size: large !important;
 }
 
+.container{
+  margin-top: 150px;
+}
+
 .score {
   border: 2px solid black;
   width: 180px;
