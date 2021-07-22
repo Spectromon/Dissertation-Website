@@ -2,12 +2,10 @@ body {
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
   font-size: large !important;
   margin-left: 0;
-  background: linear-gradient(180deg, #0072CE 0, #003087 100%);
 }
 
 .container{
-  display:inline-block;
-  background: white;
+  margin-top: 250px;
 }
 
 .score {
