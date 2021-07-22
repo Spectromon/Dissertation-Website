@@ -6,8 +6,11 @@ body {
 
 .container{
   position: fixed; /* or absolute */
+  background: linear-gradient(180deg, #0072CE 0, #003087 100%);
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  background:white;
 }
 
 .score {
