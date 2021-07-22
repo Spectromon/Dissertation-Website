@@ -6,7 +6,7 @@ body {
 }
 
 .container{
-  display:inline;
+  display:inline-block;
   background: white;
 }
 
