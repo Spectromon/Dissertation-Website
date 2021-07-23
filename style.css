@@ -98,6 +98,7 @@ body{
     height: 120px !important;
     display: block !important;
     cursor: pointer;
+    text-decoration: none; !important
 }
 
 .linkbox{
