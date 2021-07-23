@@ -401,9 +401,11 @@ addEventListener('click', (event) =>{
 
 document.body.addEventListener("keydown", function(e) {
     keys[e.keyCode] = true;
+     e.preventDefault();
   });
   document.body.addEventListener("keyup", function(e) {
     keys[e.keyCode] = false;
+     e.preventDefault();
   });
 
 function reset(){
