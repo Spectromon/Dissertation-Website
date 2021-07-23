@@ -264,26 +264,26 @@ res.end();
 
 //This works. Requires urlencodedParser however does send an email to the specific inputted email address.
 app.post('/signup', urlencodedParser, (req,res) =>{
-  email = req.body.email
-  u_name = makeid(5)
-  p_word = makeid(8)
-  var sql = {text: 'INSERT INTO u_info(u_name, p_word, email) VALUES($1,$2,$3);', values: [u_name, p_word, email]}
-  client.query(sql, (err, res) => {
-    if (err){
-      console.log(err)
+    email = req.body.email
+    u_name = makeid(5)
+    p_word = makeid(8)
+    var sql = {text: 'INSERT INTO u_info(u_name, p_word, email) VALUES($1,$2,$3);', values: [u_name, p_word, email]}
+    client.query(sql, (err, res) => {
+      if (err){
+        console.log(err)
+      };
+    });
+    var mailOptions = {
+      from: 'rgu20daudissertation@gmail.com',
+      to: req.body.email,
+      subject: 'RGU20DAU Dissertation Study Details',
+      text: 'To Participant of RGU20DAU Dissertation Study,\n\n Thank you for signing up to be a part of this study. In order to maintain your anonymity, and to limit the opportunity for bias towards results, you have been assigned a random username and password.\n\n For the purposes of this study, please only make one account, as making multiple accounts may skew results and hinder the study!\n Please ensure that eyetracking is done for each game by pressing the start button and completing calibration, and that after every game, you stop the eyetracking using the stop button. This will ensure that, if you move to a new webpage, you are not sending further results or causing inaccuracies. If you are playing the game again on the same page, continue eyetracking.\n\n It would be incredibly beneficial to the study if you could complete every game on the platform at least three times, with eyetracking, however please feel no pressure to do so. Any results are greatly appreciated and valued. \n\n Your login details are as follows: \n\n Your username is ' + u_name + '.\n Your password is ' + p_word  + '.\n\n Again, thank you for participating, and enjoy the games!\n\n Tommy Carter'
     };
-  });
-  var mailOptions = {
-    from: 'rgu20daudissertation@gmail.com',
-    to: req.body.email,
-    subject: 'Sending Email using Node.js',
-    text: 'Hi there,\n\n Thank you for signing up to be a part of this study. In order to maintain your anonymity, and to limit the opportunity for bias towards results, you have been assigned a random username and password.\n\n For the purposes of this study, please only make one account, as making multiple accounts may sqew results and hinder the study! Please also conduct eyetracking on games with eyetracking included, and complete at least 3 attempts on each game.\n\n Your username is ' + u_name + '.\n Your password is ' + p_word  + '.\n\n Again, thank you for participating, and enjoy the games!\n\n Braintroller Team'
-  };
-
-  transporter.sendMail(mailOptions);
-
-  res.redirect('/login')
-})
+  
+    transporter.sendMail(mailOptions);
+  
+    res.redirect('/login')
+  })
 
 app.post('/login', urlencodedParser, async (req,res) =>{
   console.log(req.sessionID);
