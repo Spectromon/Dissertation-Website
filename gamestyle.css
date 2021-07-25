@@ -2,14 +2,6 @@ html {
     scroll-behavior: smooth;
   }
 
-html, body{
-   height: 100%;
-/*     min-height: 100%;
-     */
-}
-
-
-
 body::-webkit-scrollbar {
     cursor: pointer;
     width: 20px;
@@ -39,8 +31,8 @@ body{
     overflow: overlay;
     scrollbar-width: thin;
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    height: 2000px;
     margin-left: 0;
-    margin-bottom: 0px;
     background: linear-gradient(180deg, #0072CE 0, #003087 100%);
     /* background: linear-gradient(180deg, #000000 0, #000000 25%, #2cb5e8 75%);  */
     /* Might need to change % and height based upon what we're including on this page */
