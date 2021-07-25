@@ -178,7 +178,7 @@ body{
 
 .outer-container{
     background-color: transparent;
-    position: fixed;
+    position: absolute;
     top: 25%;
     left: 15%;
     height: 500px;
@@ -210,8 +210,8 @@ cursor: pointer;
     max-width: 33%;
     background-color: transparent;
     border: 2px solid transparent;
-    border-radius: 55px
-
+    border-top-left-radius: 55px;
+    border-bottom-left-radius: 55px;
 }
 
 .left-top:hover{
@@ -226,25 +226,12 @@ cursor: pointer;
     align-content: center !important;
     justify-items: flex-start !important;
     justify-content: flex-start !important;
-    flex: 0 0 33%;
-    max-width: 33%;
-    background-color: turquoise;
-    border: 2px solid turquoise;
-    border-radius: 55px;
-
-}
-
-.right-top{
-    display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
-    justify-items: flex-end !important;
-    justify-content: flex-end !important;
-    flex: 0 0 33%;
-    max-width: 33%;
-    background-color: purple;
-    border: 2px solid purple;
-    border-radius: 55px;
+    flex: 0 0 75%;
+    max-width: 100%;
+    background-color: green;
+    border: 2px solid green;
+    border-top-right-radius: 55px;
+    border-bottom-right-radius: 55px;
 
 }
 
