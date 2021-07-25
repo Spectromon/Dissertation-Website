@@ -179,7 +179,7 @@ body{
 .outer-container{
     background-color: transparent;
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 15%;
     height: 500px;
     width: 70vw;
@@ -208,8 +208,8 @@ cursor: pointer;
     justify-content: flex-start !important;
     flex: 0 0 33%;
     max-width: 33%;
-    background-color: transparent;
-    border: 2px solid transparent;
+    background-color: green;
+    border: 2px solid green;
     border-top-left-radius: 55px;
     border-bottom-left-radius: 55px;
 }
