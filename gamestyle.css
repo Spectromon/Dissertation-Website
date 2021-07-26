@@ -302,7 +302,7 @@ cursor: pointer;
     margin-top: 0;
     margin-left: 50%;
     flex: 0 0 50%;
-    background: white;
+    background: transparent;
     height: 100%;
 }
 
