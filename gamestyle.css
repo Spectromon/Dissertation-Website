@@ -208,6 +208,9 @@ cursor: pointer;
 .left-top:hover{
     transition: .3s;
     background-color: white;
+    border: 2px solid white;
+    border-top-left-radius: 55px;
+    border-bottom-left-radius: 55px;
 }
 .center-top{
     display: flex !important;
@@ -282,6 +285,9 @@ cursor: pointer;
 .center-bottom:hover{
     transition: .3s;
     background-color: white;
+    border: 2px solid white;
+    border-top-right-radius: 55px;
+    border-bottom-right-radius: 55px;
 }
 
 .center-bottom:hover > .rubick-icon{
