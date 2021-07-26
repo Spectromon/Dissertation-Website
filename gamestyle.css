@@ -261,8 +261,8 @@ cursor: pointer;
     justify-content: flex-start !important;
     flex: 0 0 33%;
     max-width: 33%;
-    background-color: purple;
-    border: 2px solid purple;
+    background-color: transparent;
+    border: 2px solid transparent;
     border-top-right-radius: 55px;
     border-bottom-right-radius: 55px;
 
