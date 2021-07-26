@@ -221,7 +221,7 @@ cursor: pointer;
     flex: 0 0 75%;
     max-width: 100%;
     background-color: white;
-    border: 2px solid green;
+    border: 2px solid white;
     border-top-right-radius: 55px;
     border-bottom-right-radius: 55px;
 
@@ -246,7 +246,7 @@ cursor: pointer;
     flex: 0 0 75%;
     max-width: 100%;
     background-color: white;
-    border: 2px solid purple;
+    border: 2px solid white;
     border-top-left-radius: 55px;
     border-bottom-left-radius: 55px;
 
