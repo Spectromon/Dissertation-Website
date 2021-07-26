@@ -199,8 +199,8 @@ cursor: pointer;
     justify-content: flex-start !important;
     flex: 0 0 33%;
     max-width: 33%;
-    background-color: green;
-    border: 2px solid green;
+    background-color: transparent;
+    border: 2px solid transparent;
     border-top-left-radius: 55px;
     border-bottom-left-radius: 55px;
 }
