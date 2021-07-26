@@ -309,8 +309,8 @@ cursor: pointer;
  .asteroids-icon{
     transition: .3s;
     margin-top: 0;
-    margin-left: 30%;
+    margin-left: 20%;
     flex: 0 0 50%;
-    background: white;
+    background: transparent;
     height: 100%;
 }
