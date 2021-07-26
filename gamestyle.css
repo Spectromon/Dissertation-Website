@@ -254,6 +254,20 @@ cursor: pointer;
     border-bottom-left-radius: 55px;
 
 }
+
+.left-bottom2{
+    display: flex !important;
+    align-items: center !important;
+    align-content: center !important;
+    justify-items: flex-start !important;
+    justify-content: flex-start !important;
+    flex: 0 0 75%;
+    background-color: white;
+    border: 2px solid white;
+    border-top-left-radius: 55px;
+    border-bottom-left-radius: 55px;
+
+}
 .center-bottom{
     cursor: pointer;
     transition: .3s;
