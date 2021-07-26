@@ -310,6 +310,7 @@ cursor: pointer;
     transition: .3s;
     margin-top: 0;
     margin-left: 20%;
+    max-width: 367px;
     flex: 0 0 50%;
     background: transparent;
     height: 100%;
