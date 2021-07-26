@@ -315,3 +315,9 @@ cursor: pointer;
     background: transparent;
     height: 100%;
 }
+
+p{
+    text-align: center;
+    font-family: 'sans-seriff';
+    font-size: 18px;
+}
