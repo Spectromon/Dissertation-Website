@@ -179,7 +179,8 @@ body{
 }
 
 .top-internal-container{
-    margin: 10px, 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     /* padding: 0 30px !important; */
     align-content: center !important;
     height: 246px !important;
@@ -228,7 +229,8 @@ cursor: pointer;
 }
 
 .bottom-internal-container{
-    margin: 10px, 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     /* padding: 0 30px !important; */
     align-content: center !important;
     height: 246px !important;
