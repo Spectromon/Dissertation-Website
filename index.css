@@ -302,3 +302,8 @@ body{
     padding: 10px;
     position: relative;
 }
+p{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 21px;
+}
