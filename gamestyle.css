@@ -179,7 +179,7 @@ body{
 }
 
 .top-internal-container{
-    top: 0%;
+    margin: 0, 10;
     /* padding: 0 30px !important; */
     align-content: center !important;
     height: 246px !important;
@@ -228,6 +228,7 @@ cursor: pointer;
 }
 
 .bottom-internal-container{
+    margin: 0, 10;
     /* padding: 0 30px !important; */
     align-content: center !important;
     height: 246px !important;
@@ -317,6 +318,7 @@ cursor: pointer;
 }
 
 p{
+    margin: 0, 10;
     text-align: center;
     font-family: 'sans-seriff';
     font-size: 18px;
