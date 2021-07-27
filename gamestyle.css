@@ -333,7 +333,7 @@ cursor: pointer;
     height: 100%;
 }
 
-.p-right{
+.p-left{
     margin-left: 15px;
     margin-right: 15px;
     text-align: left;
@@ -341,7 +341,7 @@ cursor: pointer;
     font-size: 22px;
 }
 
-.p-left{
+.p-right{
     margin-left: 15px;
     margin-right: 15px;
     text-align: right;
