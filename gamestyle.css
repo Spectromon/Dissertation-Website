@@ -207,6 +207,7 @@ cursor: pointer;
 }
 
 .left-top:hover{
+    max-width: 40%;
     transition: .3s;
     background-color: #fbb0a9;
     border: 2px solid #fbb0a9;
