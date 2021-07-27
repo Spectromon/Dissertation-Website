@@ -33,7 +33,7 @@ body{
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
     height: 1200px;
     margin-left: 0;
-    background: linear-gradient(180deg, #0072CE 0, #003087 100%);
+    background: white/*      linear-gradient(180deg, #0072CE 0, #003087 100%); */
     /* background: linear-gradient(180deg, #000000 0, #000000 25%, #2cb5e8 75%);  */
     /* Might need to change % and height based upon what we're including on this page */
 }
@@ -201,15 +201,15 @@ cursor: pointer;
     flex: 0 0 33%;
     max-width: 33%;
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid #fbb0a9;
     border-top-left-radius: 55px;
     border-bottom-left-radius: 55px;
 }
 
 .left-top:hover{
     transition: .3s;
-    background-color: white;
-    border: 2px solid white;
+    background-color: #fbb0a9;
+    border: 2px solid #fbb0a9;
     border-top-left-radius: 55px;
     border-bottom-left-radius: 55px;
 }
@@ -221,8 +221,8 @@ cursor: pointer;
     justify-content: flex-start !important;
     flex: 0 0 75%;
     max-width: 100%;
-    background-color: white;
-    border: 2px solid white;
+    background-color: #fa9a91;
+    border: 2px solid #fa9a91;
     border-top-right-radius: 55px;
     border-bottom-right-radius: 55px;
 
@@ -248,14 +248,14 @@ cursor: pointer;
     justify-content: flex-start !important;
     flex: 0 0 75%;
     max-width: 100%;
-    background-color: white;
-    border: 2px solid white;
+    background-color: #fa9a91;
+    border: 2px solid #fa9a91;
     border-top-left-radius: 55px;
     border-bottom-left-radius: 55px;
 
 }
 
-.left-bottom2{
+/* .left-bottom2{
     display: flex !important;
     align-items: center !important;
     align-content: center !important;
@@ -267,7 +267,7 @@ cursor: pointer;
     border-top-left-radius: 55px;
     border-bottom-left-radius: 55px;
 
-}
+} */
 .center-bottom{
     cursor: pointer;
     transition: .3s;
@@ -279,7 +279,7 @@ cursor: pointer;
     flex: 0 0 33%;
     max-width: 33%;
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid #fbb0a9;
     border-top-right-radius: 55px;
     border-bottom-right-radius: 55px;
 
@@ -301,15 +301,15 @@ cursor: pointer;
 
 .center-bottom:hover{
     transition: .3s;
-    background-color: white;
-    border: 2px solid white;
+    background-color: #fbb0a9;
+    border: 2px solid #fbb0a9;
     border-top-right-radius: 55px;
     border-bottom-right-radius: 55px;
 }
 
-.center-bottom:hover > .rubick-icon{
+/* .center-bottom:hover > .rubick-icon{
     background: linear-gradient(180deg, #0072CE 0, #003087 100%);
-}
+} */
 
 
 /* This is the section detailling css for each game icon */
