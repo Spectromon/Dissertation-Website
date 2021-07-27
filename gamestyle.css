@@ -301,6 +301,7 @@ cursor: pointer;
 }
 
 .center-bottom:hover{
+    padding: 10px;
     transition: .3s;
     background-color: #fbb0a9;
     border: 2px solid #fbb0a9;
