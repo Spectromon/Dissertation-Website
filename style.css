@@ -91,9 +91,11 @@ body{
     text-decoration: none !important;
 
 }
-
 .logobox a{
-    text-decoration: none !important;
+  text-decoration: none!important;
+}
+.logobox a:link{
+  text-decoration: none!important;
 }
 
 .logo{
