@@ -333,13 +333,22 @@ cursor: pointer;
     height: 100%;
 }
 
-p{
+p .left-top{
     margin-left: 15px;
     margin-right: 15px;
-    text-align: center;
+    text-align: left;
     font-family: 'sans-seriff';
     font-size: 22px;
 }
+
+p .center-bottom{
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: right;
+    font-family: 'sans-seriff';
+    font-size: 22px;
+}
+
 
 p a{
     font-family: sans-serif;
