@@ -559,8 +559,10 @@ input:focus{
 .information{
     font-family: sans-serif;
     font-size: 18px;
-    margin-right: -550px;
-
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 90%;
+    text-align: center;
 }
 
 .colourinfo{
