@@ -215,8 +215,8 @@ cursor: pointer;
 }
 .center-top{
     display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
+    align-items: left !important;
+    align-content: left !important;
     justify-items: flex-start !important;
     justify-content: flex-start !important;
     flex: 0 0 75%;
@@ -242,8 +242,8 @@ cursor: pointer;
 
 .left-bottom{
     display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
+    align-items: right !important;
+    align-content: right !important;
     justify-items: flex-start !important;
     justify-content: flex-start !important;
     flex: 0 0 75%;
