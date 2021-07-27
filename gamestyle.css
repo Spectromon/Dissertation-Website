@@ -201,7 +201,7 @@ cursor: pointer;
     flex: 0 0 33%;
     max-width: 33%;
     background-color: transparent;
-    border: 2px solid transparent;
+    border: 2px solid white;
     border-top-left-radius: 55px;
     border-bottom-left-radius: 55px;
 }
@@ -337,5 +337,5 @@ p{
     margin: 0, 10;
     text-align: center;
     font-family: 'sans-seriff';
-    font-size: 18px;
+    font-size: 22px;
 }
