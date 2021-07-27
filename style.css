@@ -2,7 +2,9 @@ html {
     scroll-behavior: smooth;
     margin: 0; height: 100%; overflow: hidden
   }
-
+a{
+    text-decoration: none !important
+}
 html, body{
     height: 100%;
 }
