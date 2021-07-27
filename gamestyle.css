@@ -41,7 +41,7 @@ body{
 .header{
     height: 110px;
     margin-bottom: -5px;
-    background: transparent;
+    background: linear-gradient(180deg, #0072CE 0, #003087 100%);
     transition:all 0.5s ease;
     width: 100vw !important;
     position: fixed !important;
