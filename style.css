@@ -91,15 +91,8 @@ body{
     text-decoration: none !important;
 
 }
-.logobox a{
+.logobox:hover{
   text-decoration: none!important;
-}
-.logobox a:link{
-  text-decoration: none!important;
-}
-
-.logobox, a:link, a:visited {
-    text-decoration: none;
 }
 
 .logo{
@@ -111,15 +104,8 @@ body{
     background: transparent;
 }
 
-.logo a{
+.logo:hover{
   text-decoration: none!important;
-}
-.logo a:link{
-  text-decoration: none!important;
-}
-
-.logo, a:link, a:visited {
-    text-decoration: none;
 }
 
 .linkbox{
