@@ -98,6 +98,10 @@ body{
   text-decoration: none!important;
 }
 
+.logobox, a:link, a:visited {
+    text-decoration: none;
+}
+
 .logo{
     margin-top: 30px;
     height: 120px !important;
@@ -105,6 +109,17 @@ body{
     cursor: pointer;
     text-decoration: none !important;
     background: transparent;
+}
+
+.logo a{
+  text-decoration: none!important;
+}
+.logo a:link{
+  text-decoration: none!important;
+}
+
+.logo, a:link, a:visited {
+    text-decoration: none;
 }
 
 .linkbox{
