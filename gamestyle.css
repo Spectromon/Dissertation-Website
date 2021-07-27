@@ -200,6 +200,7 @@ cursor: pointer;
     justify-content: flex-start !important;
     flex: 0 0 33%;
     max-width: 33%;
+    padding: 0px;
     background-color: transparent;
     border: 2px solid #fbb0a9;
     border-top-left-radius: 55px;
@@ -207,7 +208,7 @@ cursor: pointer;
 }
 
 .left-top:hover{
-    max-width: 40%;
+    padding: 10px;
     transition: .3s;
     background-color: #fbb0a9;
     border: 2px solid #fbb0a9;
