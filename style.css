@@ -2,9 +2,7 @@ html {
     scroll-behavior: smooth;
     margin: 0; height: 100%; overflow: hidden
   }
-a{
-    text-decoration: none !important;
-}
+
 html, body{
     height: 100%;
 }
@@ -90,8 +88,12 @@ body{
     justify-content: flex-start !important;
     flex: 0 0 50%;
     max-width: 25%;
-    
+    text-decoration: none !important;
 
+}
+
+.logobox a{
+    text-decoration: none !important;
 }
 
 .logo{
