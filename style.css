@@ -523,49 +523,37 @@ input:focus{
     border: 2px white solid;
     border-radius: 55px;
     margin-top: 100px;
+    margin-left: 37.5%;
     margin-bottom: -100px;
-    display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
-
 }
 
 .buttoninformation2{
-    width: 100vw !important;
-    display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
+   display: flex !important;
 
 }
 
 .buttoninformation3{
     display: flex !important;
-    align-items: center !important;
-    align-content: center !important;
     flex-wrap: wrap;
-    justify-items: flex-end !important;
-    justify-content: flex-end !important;
-    flex: 0 0 50%;
-    max-width: 75%;
-    
+    flex: 0 0 50%;   
 
 }
 
 .newgame{
-    margin-left: 40%;
+    margin-right: 10px;
     font-family: sans-serif;
     font-size: 18px;
     cursor: pointer !important;
-    padding: 14px 30px 12px 30px !important;
     padding: 7px 15px 6px 15px !important;
     border-radius: 55px !important;
     text-shadow: none !important;
 }
 
 .moves{
-    font-family: sans-serif;
-    font-size: 18px;
-    margin-left: 33%;
+    font-family: sans-serif; 
+    font-size: 18px; 
+    text-align: center; 
+    margin-right: 10px;
 }
 
 .information{
