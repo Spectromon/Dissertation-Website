@@ -279,7 +279,7 @@ cursor: pointer;
     flex: 0 0 33%;
     max-width: 33%;
     background-color: transparent;
-    border: 2px solid transparent;
+    border: 2px solid white;
     border-top-right-radius: 55px;
     border-bottom-right-radius: 55px;
 
