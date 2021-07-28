@@ -12,6 +12,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const app = express();
 app.use(express.static(__dirname));
 
+var logpage = 0;
 const session = require('express-session');
 const store = new session.MemoryStore();
 
@@ -55,6 +56,7 @@ charactersLength));
   
 // Getting Request
 app.get('/', (req, res) => {
+  logpage = 0
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
     else if (session != undefined && session != null) {
@@ -96,7 +98,13 @@ app.get('/login', (req, res) => {
     else if (session != undefined && session != null) {
       res.redirect('/gamehub')}                 
      else{
-       res.sendFile('login.html', {root: __dirname })}
+       if (logpage == 0){
+       res.sendFile('login.html', {root: __dirname })
+       }
+       else if (logpage == 1){
+       res.sendFile('login-signup.html', {root: __dirname })
+       }
+       }
     })
 });
 
@@ -284,7 +292,7 @@ app.post('/signup', urlencodedParser, (req,res) =>{
     };
   
     transporter.sendMail(mailOptions);
-  
+    logpage = 1
     res.redirect('/login')
   })
 
