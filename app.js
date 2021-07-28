@@ -108,7 +108,7 @@ app.get('/login', (req, res) => {
        else if (logpage == 2){
          res.sendFile('login - nosesh.html', {root: __dirname })
        }
-    })
+    }
 });
 
 app.get('/logout', (req, res) => {
