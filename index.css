@@ -31,7 +31,7 @@ body{
     overflow: overlay;
     scrollbar-width: thin;
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-    height: 2000px;
+    height: 1400px;
     margin-left: 0;
     background: linear-gradient(180deg, #0072CE 0, #003087 100%);
     /* background: linear-gradient(180deg, #000000 0, #000000 25%, #2cb5e8 75%);  */
@@ -293,10 +293,10 @@ body{
 
 .secondarycontent{
     background-color: white;
-    width: 1400px; /* Can be in percentage also. */
+    width: 80%/* Can be in percentage also. */
     border: 2px solid transparent;
     border-radius: 55px;
-    height: 800px;
+    height: 20%;
     margin: 0 auto;
     margin-top: 150px;
     padding: 10px;
