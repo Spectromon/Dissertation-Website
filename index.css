@@ -293,7 +293,7 @@ body{
 
 .secondarycontent{
     background-color: white;
-    width: 80%/* Can be in percentage also. */
+    width: 80%/* Can be in percentage also. */;
     border: 2px solid transparent;
     border-radius: 55px;
     height: 20%;
