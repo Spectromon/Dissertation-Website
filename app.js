@@ -102,7 +102,7 @@ app.get('/login', (req, res) => {
        res.sendFile('login.html', {root: __dirname })
        }
        else if (logpage == 1){
-       res.sendFile('login-signup.html', {root: __dirname })
+       res.sendFile('login - signup.html', {root: __dirname })
        }
        }
     })
