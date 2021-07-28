@@ -92,7 +92,6 @@ app.get('/signup', (req, res) => {
     })
 });
 
-
 app.get('/login', (req, res) => {
   store.get(req.sessionID, (err, session) =>{
     if (err) throw err;
@@ -109,6 +108,7 @@ app.get('/login', (req, res) => {
          res.sendFile('login - nosesh.html', {root: __dirname })
        }
     }
+  })
 });
 
 app.get('/logout', (req, res) => {
