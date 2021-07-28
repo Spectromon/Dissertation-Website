@@ -176,6 +176,13 @@ body{
 
 }
 
+.login-text{
+    font-family: sans-serif;
+    font-size: 14px;
+    text-align: center;
+    
+}
+
 .signuplnk   {
     margin-top: 5px;
     margin-left: 5px;
