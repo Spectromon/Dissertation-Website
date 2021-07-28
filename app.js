@@ -74,7 +74,8 @@ app.get('/gamehub', (req, res) => {
     else if (session != undefined && session != null) {
       res.sendFile('games.html', {root: __dirname })//change this to the html of the game selection screen (containing logout button).
     }
-      else{ 
+      else{
+            logpage = 2
             res.redirect('/login')
       }
   })
@@ -104,6 +105,8 @@ app.get('/login', (req, res) => {
        else if (logpage == 1){
        res.sendFile('login - signup.html', {root: __dirname })
        }
+       else if (logpage == 2){
+         res.sendFile('login - nosesh.html', {root: __dirname })
        }
     })
 });
@@ -120,7 +123,10 @@ app.get('/dotsandboxes', (req, res) => {
   else if (session != undefined && session != null) {
     res.sendFile('dotsandboxes.html', {root: __dirname })
                }
-   else{ res.redirect('/login')}; 
+   else{
+     logpage = 2;
+     res.redirect('/login')
+   }; 
   })
 });
 
@@ -130,7 +136,9 @@ app.get('/rubick', (req, res) => {
   else if (session != undefined && session != null) {
     res.sendFile('rubick.html', {root: __dirname })
                }
-   else{ res.redirect('/login')}; 
+   else{ 
+     logpage = 2;
+     res.redirect('/login')}; 
   })
 });
 
@@ -140,7 +148,9 @@ app.get('/asteroids', (req, res) => {
   else if (session != undefined && session != null) {
     res.sendFile('asteroids.html', {root: __dirname })
                }
-   else{ res.redirect('/login')}; 
+   else{
+     logpage = 2
+     res.redirect('/login')}; 
   })
 });
 
@@ -150,7 +160,9 @@ app.get('/snake', (req, res) => {
   else if (session != undefined && session != null) {
     res.sendFile('snake.html', {root: __dirname })
                }
-   else{ res.redirect('/login')}; 
+   else{
+     logpage = 2
+     res.redirect('/login')}; 
   })
 });
 app.post('/rubick', (req, res) => {
@@ -160,7 +172,8 @@ app.post('/rubick', (req, res) => {
     else if (session != undefined && session != null) {
       res.sendFile('rubick.html', {root: __dirname })
                  }
-     else{ 
+     else{
+       logpage = 2
        res.redirect('/login')}; 
     })
 });
