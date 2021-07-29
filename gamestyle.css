@@ -169,7 +169,7 @@ body{
 .outer-container{
     background-color: transparent;
     position: absolute;
-    top: 15%;
+    top: 20vh;
     left: 12%;
     height: 500px;
     width: 70vw;
