@@ -240,7 +240,7 @@ body{
     background-color: transparent;
     width: 100% !important;
     display: flex;
-    margin-top: 250px;
+    margin-top: 25vh;
     align-content: center !important;
 }
 
@@ -249,7 +249,7 @@ body{
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+/*     margin-top: 50px; */
     padding-top: 25px;
     padding-bottom: 25px;
     background-color: white;
@@ -286,7 +286,7 @@ input[type=text], input[type=password] {
     text-align: center;
     padding: 12px 20px;
     margin: 8px 0;
-    margin-left: 125px;
+    margin-left: 7vw;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 55px;
