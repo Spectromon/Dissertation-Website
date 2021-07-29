@@ -319,7 +319,7 @@ cursor: pointer;
  .rubick-icon{
     transition: .3s;
     margin-top: 0;
-    margin-left: 50%;
+    margin-left: 2.5vw;
     flex: 0 0 50%;
     background: transparent;
     height: 100%;
@@ -328,11 +328,10 @@ cursor: pointer;
  .asteroids-icon{
     transition: .3s;
     margin-top: 0;
-    margin-left: 20%;
-    max-width: 367px;
+    margin-left: 0;
+    max-width: 22vw;
     flex: 0 0 50%;
     background: transparent;
-    height: 100%;
 }
 
 .p-left{
