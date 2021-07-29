@@ -392,103 +392,103 @@ input:focus{
 
 #tile{
     
-    width: 100px;
-    height: 100px;
+   width: 10vh;
+    height: 10vh;
     transition: 0.5s ease;
     margin: 5px;
 }
 
 #tile-alt{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     margin: 5px;
 }
 #tile2{
-    width: 100px;
-    height: 100px;
+   width: 10vh;
+    height: 10vh;
     transition: 0.5s ease;
     margin: 5px;
 }
 #tile2-alt{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     margin: 5px;
 }
 #tile3{
-    width: 100px;
-    height: 100px;
+   width: 10vh;
+    height: 10vh;
     transition: 0.5s ease;
     margin: 5px;
 }
 #tile3-alt{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     margin: 5px;
 }
 #tile4{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     transition: 0.5s ease;
     margin: 5px;
 }
 #tile4-alt{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     margin: 5px;
 }
 #tile5{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     transition: 0.5s ease;
     margin: 5px;
 }
 #tile5-alt{
-    width: 100px;
-    height: 100px;;
+    width: 10vh;
+    height: 10vh;
     margin: 5px;
 }
 #tile6{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     transition: 0.5s ease;
     margin: 5px;
 }
 #tile6-alt{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     margin: 5px;
 }
 #tile7{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     transition: 0.5s ease;
     margin: 5px;
 }
 #tile7-alt{
-    width: 100px;
+    width: 10vh;
     height: 100px;
     margin: 5px;
 }
 #tile8{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     transition: 0.5s ease;
     margin: 5px;
 }
 #tile8-alt{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     margin: 5px;
 }
 #tile9{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     transition: 0.5s ease;
     margin: 5px;
 }
 #tile9-alt{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     margin: 5px;
 }
 
