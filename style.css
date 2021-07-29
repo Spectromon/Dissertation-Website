@@ -600,7 +600,7 @@ input:focus{
   .newgame{
     margin-right: 10px;
     font-family: sans-serif;
-    font-size: calc(1em + 1vw);
+    font-size: calc(1em + 0.1vw);
     cursor: pointer !important;
     padding: 7px 15px 6px 15px !important;
     border-radius: 55px !important;
@@ -608,7 +608,7 @@ input:focus{
 }
 .moves{
     font-family: sans-serif; 
-    font-size: calc(1em + 1vw);
+    font-size: calc(1em + 0.1vw);
     text-align: center; 
     margin-right: 10px;
 }
