@@ -572,9 +572,13 @@ input:focus{
     text-align: center;
 }
 
-@media screen and (max-width : 2000px)
-{
-    .newgame{
+.moves{
+    font-family: sans-serif; 
+    font-size: 18px; 
+    text-align: center; 
+    margin-right: 10px;
+
+     .newgame{
     margin-right: 10px;
     font-family: sans-serif;
     font-size: 18px;
@@ -582,15 +586,8 @@ input:focus{
     padding: 7px 15px 6px 15px !important;
     border-radius: 55px !important;
     text-shadow: none !important;
-}
+    }
 
-.moves{
-    font-family: sans-serif; 
-    font-size: 18px; 
-    text-align: center; 
-    margin-right: 10px;
-}
-}
 
 
 
@@ -604,6 +601,7 @@ input:focus{
     padding: 7px 15px 6px 15px !important;
     border-radius: 55px !important;
     text-shadow: none !important;
+}
 }
 
 .moves{
