@@ -349,7 +349,7 @@ input:focus{
     align-content: center !important;
 }
 .internalgamezone{
-    margin-top: 250px;
+    margin-top: 25vh;
     align-content: center !important;
     display: flex !important;
 }
@@ -362,8 +362,8 @@ input:focus{
     margin-right: -15px;
 }
 .outsidecontainer_main{
-    margin-right: -450px;
-    margin-left: 450px;
+    margin-right: -20vw;
+    margin-left: 20vw;
     display: flex !important;
     align-items: center !important;
     align-content: center !important;
@@ -375,7 +375,7 @@ input:focus{
 }
 
 .outsidecontainer_change{
-    margin-left: -450px;
+    margin-left: -20vw;
     display: flex !important;
     align-items: center !important;
     align-content: center !important;
