@@ -1,7 +1,7 @@
 const canvas = document.querySelector('canvas');
 
 canvas.width = innerWidth - 400
-canvas.height = 600;
+canvas.height = window.innerHeight/2;
 
 const ctx = canvas.getContext('2d');
 
