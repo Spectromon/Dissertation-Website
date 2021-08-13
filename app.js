@@ -247,6 +247,7 @@ app.post("/eyetracking", urlencodedParser, async (req,res) =>{
   var innerHeight = req.body.InnerHeight
   var innerWidth = req.body.InnerWidth
   
+  console.log(innerWidth, innerHeight)
   //console.log('Username: ' + u_name + ', GazeX :' + GazeX + ', GazeY :' + GazeY + ', HeadX :' + HeadX + ', HeadY :' + HeadY + ', HeadZ :' + HeadZ + ', Yaw :' + Yaw + ', Pitch :' + Pitch + ', Roll :' + Roll)
 
   //These are changed within the server itself and not taken from the HTML form
