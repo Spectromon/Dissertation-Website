@@ -42,6 +42,8 @@ function PlotGaze(GazeData) {
                            Yaw: GazeData.HeadYaw,
                            Pitch: GazeData.HeadPitch,
                            Roll: GazeData.HeadRoll,
+                           InnerHeight: window.innerheight,
+                           InnerWidth: window.innerwidth,
                            Game: 'Rubick',
                        },
                        success: function (result) {
