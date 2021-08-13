@@ -244,6 +244,8 @@ app.post("/eyetracking", urlencodedParser, async (req,res) =>{
   var Pitch = req.body.Pitch
   var Roll = req.body.Roll
   var Game = req.body.Game
+  var innerHeight = req.body.InnerHeight
+  var innerWidth = req.body.InnerWidth
   
   //console.log('Username: ' + u_name + ', GazeX :' + GazeX + ', GazeY :' + GazeY + ', HeadX :' + HeadX + ', HeadY :' + HeadY + ', HeadZ :' + HeadZ + ', Yaw :' + Yaw + ', Pitch :' + Pitch + ', Roll :' + Roll)
 
