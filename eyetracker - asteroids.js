@@ -42,6 +42,8 @@ function PlotGaze(GazeData) {
                            Yaw: GazeData.HeadYaw,
                            Pitch: GazeData.HeadPitch,
                            Roll: GazeData.HeadRoll,
+                           InnerHeight: window.innerHeight,
+                           InnerWidth: window.innerWidth,
                            Game: 'Asteroids',
                        },
                        success: function (result) {
