@@ -275,7 +275,7 @@ let seconds = date_ob.getSeconds();
 var DateTime = (year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
 
 //console.log('Username: ' + u_name + ', GazeX :' + GazeX + ', GazeY :' + GazeY + ', HeadX :' + HeadX + ', HeadY :' + HeadY + ', HeadZ :' + HeadZ + ', Yaw :' + Yaw + ', Pitch :' + Pitch + ', Roll :' + Roll + ', DateTime: ' + DateTime + ', Game:' + Game)
-var sql = {text: 'INSERT INTO e_info(u_name, gazex, gazey, headx, heady, headz, yaw, pitch, roll, datetime, game) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);', values: [u_name, GazeX, GazeY, HeadX, HeadY, HeadZ, Yaw, Pitch, Roll, DateTime, Game, innerWidth, innerHeight]}
+var sql = {text: 'INSERT INTO e_info(u_name, gazex, gazey, headx, heady, headz, yaw, pitch, roll, datetime, game, inner_width, inner_height) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);', values: [u_name, GazeX, GazeY, HeadX, HeadY, HeadZ, Yaw, Pitch, Roll, DateTime, Game, innerWidth, innerHeight]}
   client.query(sql, (err, res) => {
     if (err){
       console.log(err)
