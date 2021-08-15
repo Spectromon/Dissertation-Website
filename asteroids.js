@@ -410,7 +410,7 @@ document.body.addEventListener("keydown", function(e) {
 
 function reset(){
 cancelAnimationFrame(animationId)
-SPEED = 1000
+SPEED = 2000
 interval_list.forEach((interval, intervalidx) =>{
   clearInterval(interval)
   interval_list.splice(intervalidx, 1)
