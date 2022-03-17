@@ -1,8 +1,10 @@
 
 const canvas = document.querySelector('canvas');
+var EatSFX = new Audio('EatSFX.mp3');
+var DeathSFX = new Audio('DeathSFX.mp3');
 
-canvas.width = window.innerWidth/2
-canvas.height = window.innerHeight/2 ;
+canvas.width = 1000
+canvas.height = 600;
 
 const ctx = canvas.getContext('2d');
 
@@ -200,31 +202,13 @@ function animate(){
             dist = Math.hypot(player.x - tail.x, player.y - tail.y)
             //Dist - tail.radius - player.radius will always = -20 on death, but kept as -16 just for debugging and insurance
             if (dist - tail.radius - player.radius < -16) {
+                DeathSFX.play();
                 cancelAnimationFrame(animationId)
                 scoreboard.className = 'gameover'
                 scoreboard.style.marginLeft = String(canvas.width/2.5) + 'px';
                 scoreboard.style.marginTop = String(canvas.height/2.5) + 'px';
-                scoretext.innerHTML = "GAME OVER  <br/> Score: " + score
+                scoretext.innerHTML = "GAME OVER  <br/> Score: " + score + "<br/><button class = 'playagain' onClick = reset()>Play Again?</button>"
                 total_score.innerHTML = ''
-                $(document).ready(function(){
-            $.ajax({
-              global: false,
-              type: 'POST',
-              url: "/submission",
-              dataType: 'html',
-              data: {
-                  score: score,
-                  game: "Snake"
-              },
-              success: function (result) {
-                  console.log('Score Submitted');
-              },
-              error: function (request, status, error) {
-                  serviceError();
-              }
-          });
-        });
-                
             }
         }
     })
@@ -249,6 +233,7 @@ function animate(){
             ))
         }
         score += 1
+        EatSFX.play();
         total_score.innerHTML = score
         for (let i = 0; i < 10; i++){
             if (tails.length < 10){
@@ -318,23 +303,31 @@ function foodcreator(){
 }
 
 document.body.addEventListener("keydown", function(e) {
+    e.preventDefault()
     // 37 = left
-    if (e.keyCode == 37){
-        direction = 'Left'
+    if (e.keyCode == 37|| e.keyCode == 65){
+        if (direction != 'Right'){
+            direction = 'Left'
+        }
     }
     // 38 = up
-    if (e.keyCode == 38){
-        direction = 'Up'
+    if (e.keyCode == 38 || e.keyCode == 87){
+        if (direction != 'Down'){
+            direction = 'Up'
+        }
     }
     // 39 = right
-    if (e.keyCode == 39){
-        direction = 'Right'
+    if (e.keyCode == 39|| e.keyCode == 68){
+        if (direction != 'Left'){
+            direction = 'Right'
+        }
     }
     // 40 = down
-    if (e.keyCode == 40){
-        direction = 'Down'
+    if (e.keyCode == 40|| e.keyCode == 83){
+        if (direction != 'Up'){
+            direction = 'Down'
+        }
     }
-    e.preventDefault();
   });
 
 function reset(){
@@ -350,7 +343,7 @@ function reset(){
     SPEED = 5
     score = 0
     total_score.innerHTML = score
-    player = new Player(x,y, 10, 'blue')
+    player = new Player(x,y, 10, 'green')
     tails = []
     particles = []
     tails.push(new Tail(
